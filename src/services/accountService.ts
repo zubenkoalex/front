@@ -25,7 +25,7 @@ export const accountApiSlice = apiSlice.injectEndpoints({
     endpoints: builder => ({
         getMe: builder.query<UserModel, void>({
             query: () => ({
-                url: 'account/me', 
+                url: 'account/profile', 
                 method: 'GET'
             }),
             async onQueryStarted(_, { dispatch, queryFulfilled }) {
