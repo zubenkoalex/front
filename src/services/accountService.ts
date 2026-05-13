@@ -20,6 +20,7 @@ export interface ChangePasswordRequest {
     password: string;
     repeatPassword: string;
 }
+// test deploy
 
 export const accountApiSlice = apiSlice.injectEndpoints({
     endpoints: builder => ({
