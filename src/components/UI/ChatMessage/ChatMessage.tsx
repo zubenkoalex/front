@@ -23,16 +23,16 @@ export const ChatMessage: FC<ComponentProps> = ({
     onSubmitEdit,
     onRetry
 }) => {
-    const {setActiveModal, setShowedImage} = useActions(allActions.dashboard);
+    const { setActiveModal, setShowedImage } = useActions(allActions.dashboard);
     
     const [copied, setCopied] = useState<boolean>(false);
-    
     const [isEditing, setIsEditing] = useState<boolean>(false);
     
     const editInput = useInput(message.content);
     const textareaRef = useRef<HTMLTextAreaElement | null>(null);
     
-    const isSaveDisabled = useMemo(() => editInput.value.length === 0, [editInput.value])
+    // Добавлена точка с запятой
+    const isSaveDisabled = useMemo(() => editInput.value.length === 0, [editInput.value]);
     
     useEffect(() => {
         if (isEditing && textareaRef.current) {
@@ -46,7 +46,7 @@ export const ChatMessage: FC<ComponentProps> = ({
                 }
             }, 0);
         }
-    }, [isEditing]);
+    }, [isEditing]); // message.content специально исключен, чтобы не сбрасывать ввод при обновлении
 
     useLayoutEffect(() => {
         const el = textareaRef.current;
@@ -65,7 +65,6 @@ export const ChatMessage: FC<ComponentProps> = ({
         void el.offsetHeight; 
 
         el.style.height = newHeight + "px";
-
     }, [editInput.value]);
 
     const handleCopy = () => {
@@ -80,8 +79,9 @@ export const ChatMessage: FC<ComponentProps> = ({
     const handleSave = () => {
         if (isSaveDisabled) return;
 
-        if (editInput.value.trim() && editInput.value.trim() !== message.content)
+        if (editInput.value.trim() && editInput.value.trim() !== message.content) {
             onSubmitEdit?.(message.id, editInput.value.trim());
+        }
 
         setIsEditing(false);
     };
@@ -90,48 +90,55 @@ export const ChatMessage: FC<ComponentProps> = ({
         if (e.key === "Enter" && !e.shiftKey) {
             e.preventDefault();
             handleSave();
-        } else if (e.key === "Escape")
+        } else if (e.key === "Escape") {
             setIsEditing(false);
+        }
     };
 
 
-    if (message.sender === "user") 
+    if (message.sender === "user") {
         return (
             <div className={`${styles["message"]} ${styles["author"]}`}>
-                {message.attachments &&
+                {message.attachments && (
                     <div className={styles["files"]}>
                         {message.attachments?.map(file => {
                             const { key, category, Icon, isImage } = getFileMetadata(file);
 
-                            return (
-                                isImage ? 
-                                    <div 
-                                        key={file.id} 
-                                        className={`${styles["file"]} ${styles[key]}`}
-                                        onClick={() => {                                    
-                                            setActiveModal("image");
-                                            setShowedImage(file.url);
-                                        }}
-                                    >
-                                        <img src={file.url} className={styles["image"]} />
-                                    </div>
-                                    :
-                                    <div key={file.id} className={`${styles["file"]} ${styles[key]}`}>
-                                        <div className={styles["content"]}>
-                                            <div className={styles["icon-container"]}>
-                                                <Icon className={styles["icon"]} />
-                                            </div>
-                                            <div className={styles["info"]}>
-                                                <span className={styles["filename"]}>{file.name}</span>
-                                                <span className={styles["category"]}>{category}</span>
-                                            </div>
+                            return isImage ? (
+                                <div 
+                                    key={file.id} 
+                                    className={`${styles["file"]} ${styles[key]}`}
+                                    onClick={() => {                                    
+                                        setActiveModal("image");
+                                        const fullUrl = file.url?.startsWith('/') 
+                                            ? `https://adzen-ai.ru/api${file.url}` 
+                                            : file.url;
+                                        setShowedImage(fullUrl);
+                                    }}
+                                >
+                                    <img 
+                                        src={file.url?.startsWith('/') ? `https://adzen-ai.ru/api${file.url}` : file.url} 
+                                        className={styles["image"]} 
+                                    />
+                                </div>
+                            ) : (
+                                <div key={file.id} className={`${styles["file"]} ${styles[key]}`}>
+                                    <div className={styles["content"]}>
+                                        <div className={styles["icon-container"]}>
+                                            <Icon className={styles["icon"]} />
+                                        </div>
+                                        <div className={styles["info"]}>
+                                            <span className={styles["filename"]}>{file.name}</span>
+                                            <span className={styles["category"]}>{category}</span>
                                         </div>
                                     </div>
-                            )
+                                </div>
+                            );
                         })}
                     </div>
-                }
-                {isEditing ?
+                )}
+                
+                {isEditing ? (
                     <>
                         <div className={styles["inner"]}>
                             <Input 
@@ -163,35 +170,32 @@ export const ChatMessage: FC<ComponentProps> = ({
                             </Button>
                         </div>
                     </>
-                    :
+                ) : (
                     <>
-                        {message.content &&                        
+                        {message.content && (
                             <div className={styles["author"]}>
                                 <span>{message.content}</span>
                             </div>
-                        }
+                        )}
                         <div className={styles["actions"]}>
                             <div className={styles["action"]} onClick={() => setIsEditing(true)}>
                                 <Edit className={styles["icon"]} />
                             </div>
-                            {message.content &&  
+                            {message.content && (
                                 <div className={styles["action"]} onClick={handleCopy}>
-                                    {copied ?
-                                        <Check className={styles["icon"]} />
-                                        :
-                                        <Copy className={styles["icon"]} />
-                                    }
+                                    {copied ? <Check className={styles["icon"]} /> : <Copy className={styles["icon"]} />}
                                 </div>
-                            }
+                            )}
                         </div>
                     </>
-
-                }
+                )}
             </div>
         );
+    }
     
-    if (message.sender === "ai")
-        if (message.status === "thinking")
+    // ИСПРАВЛЕНИЕ: Добавлены фигурные скобки для блока AI
+    if (message.sender === "ai") {
+        if (message.status === "thinking") {
             return (
                 <div className={`${styles["message"]} ${styles["answer"]}`}>
                     <div className={styles["answer"]}>
@@ -202,8 +206,9 @@ export const ChatMessage: FC<ComponentProps> = ({
                     </div>
                 </div>
             );
+        }
 
-        if (message.status === "error")
+        if (message.status === "error") {
             return (
                 <div className={`${styles["message"]} ${styles["answer"]}`}>
                     <div className={styles["error"]}>
@@ -220,6 +225,7 @@ export const ChatMessage: FC<ComponentProps> = ({
                     </div>
                 </div>
             );
+        }
 
         return (
             <div className={`${styles["message"]} ${styles["answer"]}`}>
@@ -234,14 +240,13 @@ export const ChatMessage: FC<ComponentProps> = ({
                 </div>
                 <div className={styles["actions"]}>
                     <div className={styles["action"]} onClick={handleCopy}>
-                        {copied ?
-                            <Check className={styles["icon"]} />
-                            :
-                            <Copy className={styles["icon"]} />
-                        }
+                        {copied ? <Check className={styles["icon"]} /> : <Copy className={styles["icon"]} />}
                     </div>
                 </div>
             </div>
         );
+    }
 
+    // На случай, если появится неизвестный sender
+    return null; 
 };
