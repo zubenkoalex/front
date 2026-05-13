@@ -133,7 +133,8 @@ export const CreateAnimation: FC = () => {
                             variant="secondary" 
                             className={styles["button"]}
                             onClick={() => {
-                                navigate("/dashboard/new-company/companies-history")
+                                // УДАЛЯЕМ /new-company ИЗ ПУТИ
+                                navigate("/dashboard/companies-history")
                             }}
                         >
                             <span>На страницу кампании</span>
