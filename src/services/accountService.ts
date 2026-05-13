@@ -20,13 +20,12 @@ export interface ChangePasswordRequest {
     password: string;
     repeatPassword: string;
 }
-// test deploy 11
 
 export const accountApiSlice = apiSlice.injectEndpoints({
     endpoints: builder => ({
         getMe: builder.query<UserModel, void>({
             query: () => ({
-                url: 'account/profile', 
+                url: 'account/me', 
                 method: 'GET'
             }),
             async onQueryStarted(_, { dispatch, queryFulfilled }) {

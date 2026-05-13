@@ -37,13 +37,13 @@ export const Authorization: FC = () => {
         setHeight(el.scrollHeight);
     }, [page]);
 
-    if (isLoading) {
-        return (
-            <div className={styles["spinner-container"]}>
-                <Spinner className={styles["spinner"]} />
-            </div>
-        );
-    }
+    // if (isLoading) {
+    //     return (
+    //         <div className={styles["spinner-container"]}>
+    //             <Spinner className={styles["spinner"]} />
+    //         </div>
+    //     );
+    // }
 
     if (user) return <Navigate to={"/dashboard"} replace />;
 
