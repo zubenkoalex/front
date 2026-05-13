@@ -21,6 +21,21 @@ export const Forecasts: FC = () => {
         { pollingInterval: 180000 }
     );
 
+    // 1. ПЕРЕНОСИМ ХУКИ НАВЕРХ (до early return)
+    const platformInfo = useMemo(() => {
+        // Добавлен знак вопроса (?), так как companyForecast сначала может быть undefined
+        return companyForecast?.platforms.find(p => p.key === selectedPlatform);
+    }, [companyForecast, selectedPlatform]);
+
+    const isValid = useMemo(() => {
+        return Boolean(selectedStrategy);
+    }, [selectedStrategy]);
+
+    useEffect(() => {
+        setValid(isValid);
+    }, [isValid]);
+
+    // 2. И ТОЛЬКО ТЕПЕРЬ ДЕЛАЕМ РАННИЙ ВОЗВРАТ (Спиннер)
     if (isFetching || !companyForecast)
         return (
             <div className={styles["content"]}>
@@ -30,21 +45,7 @@ export const Forecasts: FC = () => {
             </div>    
         )
 
-    const platformInfo = useMemo(() => {
-        return companyForecast.platforms.find(p => p.key === selectedPlatform);
-    }, [companyForecast, selectedPlatform]);
-
     const PlatformIcon = selectedPlatform ? AdCompanyIcons[selectedPlatform] : null;
-
-    const isValid = useMemo(() => {
-        return Boolean(
-            selectedStrategy
-        );
-    }, [selectedStrategy]);
-
-    useEffect(() => {
-        setValid(isValid);
-    }, [isValid]);
 
     return (
         <div className={styles["content"]}>
@@ -82,7 +83,7 @@ export const Forecasts: FC = () => {
                                 {recommendedMetrics && Object.entries(recommendedMetrics).map(([key, value]) => (
                                     <div key={key} className={`${styles["statistic"]} ${styles[key]}`}>
                                         <span className={styles["key"]}>{AdCompanyMetricsNames[key]}</span>
-                                        <span className={styles["value"]}>~{formatThousands(value)}{key === "ctr" ? "%" : ""}</span>
+                                        <span className={styles["value"]}>~{formatThousands(value as number)}{key === "ctr" ? "%" : ""}</span>
                                     </div>
                                 ))}
                             </div>
@@ -149,7 +150,7 @@ export const Forecasts: FC = () => {
                                         </div>
                                         <div className={styles["cards"]}>
                                             {Object.entries(strategy.metrics).map(([key, value]) => {
-                                                if (key === "recommended" || typeof value === "boolean") return;
+                                                if (key === "recommended" || typeof value === "boolean") return null;
 
                                                 return (
                                                     <MetricsCard 
@@ -157,7 +158,7 @@ export const Forecasts: FC = () => {
                                                         metricType={key}
                                                         Icon={AdCompanyMetricsIcons[key]}
                                                         content={AdCompanyMetricsNames[key]}
-                                                        value={`~${formatThousands(value)}${key === "ctr" ? "%" : ""}`} 
+                                                        value={`~${formatThousands(value as number)}${key === "ctr" ? "%" : ""}`} 
                                                     />
                                                 )
                                             })}
@@ -175,7 +176,7 @@ export const Forecasts: FC = () => {
                                                     metricType={key}
                                                     Icon={AdCompanyMetricsIcons[key]}
                                                     content={AdCompanyExpensesNames[key]}
-                                                    value={`~${formatThousands(value)} ₽`} 
+                                                    value={`~${formatThousands(value as number)} ₽`} 
                                                 />
                                             ))}
                                         </div>
