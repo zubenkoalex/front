@@ -174,11 +174,18 @@ export const Registration: FC<ComponentProps> = ({
 
                                 if (!crt) return null;
 
+                                // Определяем URL
+                                let imageUrl = crt.serverUrl || crt.previewUrl;
+                                // Если путь начинается со слеша (загружено вручную), добавляем API-префикс
+                                if (imageUrl?.startsWith('/')) {
+                                    imageUrl = `https://adzen-ai.ru/api${imageUrl}`;
+                                }
+
                                 return (
                                     <div 
                                         key={creative} 
                                         className={`${styles["creative"]}`}
-                                        onMouseDown={() => handleMouseDown(crt.serverUrl || crt.previewUrl)}
+                                        onMouseDown={() => handleMouseDown(imageUrl)}
                                         onMouseUp={handleMouseUp}
                                         onMouseLeave={handleMouseLeave}
                                         onClick={() => {
@@ -186,7 +193,8 @@ export const Registration: FC<ComponentProps> = ({
                                         }}
                                     >
                                         <div className={styles["background-overlay"]} />
-                                        <img src={crt.serverUrl || crt.previewUrl} className={styles["image"]} />
+                                        {/* Используем imageUrl с правильным префиксом */}
+                                        <img src={imageUrl} className={styles["image"]} />
                                         {crt.generated &&
                                             <Tooltip
                                                 content={<>
