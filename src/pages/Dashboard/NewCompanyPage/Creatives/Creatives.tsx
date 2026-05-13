@@ -131,7 +131,12 @@ export const Creatives: FC = () => {
                         <span>Загрузить изображение</span>
                     </div>
                     {creatives.default.map((crt) => {
-                        const imageUrl = crt.serverUrl || crt.previewUrl;
+                        let imageUrl = crt.serverUrl || crt.previewUrl;
+
+                        // ИСПРАВЛЕНИЕ: Если путь начинается со слеша (загружено вручную), добавляем API-префикс
+                        if (imageUrl?.startsWith('/')) {
+                            imageUrl = `https://adzen-ai.ru/api${imageUrl}`;
+                        }
 
                         return  (
                             <div 
