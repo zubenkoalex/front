@@ -1,0 +1,15 @@
+export { Authorization } from "./Authorization/Authorization";
+export { AiChatPage } from "./Dashboard/AiChatPage/AiChatPage";
+export { CompaniesHistoryPage } from "./Dashboard/CompaniesHistoryPage/CompaniesHistoryPage";
+export { CompanyPage } from "./Dashboard/CompaniesHistoryPage/CompanyPage/CompanyPage";
+export { Dashboard } from "./Dashboard/Dashboard";
+export { HomePage } from "./Dashboard/HomePage/HomePage";
+export { CreateAnimation } from "./Dashboard/NewCompanyPage/CreateAnimation/CreateAnimation";
+export { Creatives } from "./Dashboard/NewCompanyPage/Creatives/Creatives";
+export { Forecasts } from "./Dashboard/NewCompanyPage/Forecasts/Forecasts";
+export { MainInfo } from "./Dashboard/NewCompanyPage/MainInfo/MainInfo";
+export { NewCompanyPage } from "./Dashboard/NewCompanyPage/NewCompanyPage";
+export { Registration } from "./Dashboard/NewCompanyPage/Registration/Registration";
+export { TargetPeople } from "./Dashboard/NewCompanyPage/TargetPeople/TargetPeople";
+export { PlansPage } from "./Dashboard/PlansPage/PlansPage";
+export { Landing } from "./landing/landing";

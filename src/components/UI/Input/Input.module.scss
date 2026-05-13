@@ -1,0 +1,153 @@
+@use '../../../App.scss' as app;
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: app.$vh-8px;
+
+    position: relative;
+    
+    height: 100%;
+    width: 100%;
+
+    .input-inner {
+        display: inline-block;
+
+        position: relative;
+
+        height: 100%;
+        width: 100%;
+
+        .left-icon {
+            position: absolute;
+            left: 0.7812vw;
+            top: 50%;
+            transform: translateY(-50%);
+    
+            width: app.$vh-20px;
+            height: app.$vh-20px;
+    
+            fill: var(--color-text-muted);
+        }
+    
+        .right-icons {
+            display: flex;
+            align-items: center;
+            gap: 0.5208vw;
+    
+            position: absolute;
+            right: 0.7812vw;
+            top: 50%;
+            transform: translateY(-50%);
+    
+            .right-icon {
+                width: app.$vh-24px;
+                height: app.$vh-24px;
+    
+                fill: var(--color-text-muted);
+            }
+    
+            .password-icon-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+    
+                cursor: pointer;
+    
+                &:hover .right-icon {
+                    fill: app.$orange-500;
+                }
+            }
+        }
+
+        .input {
+            width: 100%;
+            padding: app.$vh-14px 2.0833vw app.$vh-14px 0.7812vw;
+            
+            font-size: app.$vh-15px;
+            font-weight: 600;
+            color: var(--color-text);
+            
+            outline: none;
+            box-sizing: border-box;
+            
+            border: none;
+            border-radius: app.$vh-14px;
+
+            background-color: app.alpha(var(--color-text), 0.03);
+            box-shadow: app.$glass-box-shadow;
+
+            &::-webkit-scrollbar {
+                width: 0.1041vw;
+            }
+    
+            &::-webkit-scrollbar-thumb {
+                background-color: var(--color-text);
+                border-radius: app.$vh-10px;
+            }
+
+            &::placeholder {
+                color: var(--color-text-muted);
+            }
+
+            &:hover {
+                background-color: app.alpha(var(--color-text), 0.05);
+            }
+
+            &:focus {
+                color: var(--color-text);
+
+                background-color: app.alpha(var(--color-text), 0.05);
+            }
+
+            &:disabled {
+                opacity: 0.35;
+                background-color: app.alpha(var(--color-text), 0.05);
+            }
+
+            &.left {
+                padding: app.$vh-14px 2.0833vw;
+            }
+        }
+
+        &:focus-within .left-icon {
+            fill: app.$orange-500;
+        }
+    }
+
+    .error-message {
+        display: flex;
+        align-items: center;
+
+        margin-left: 0.7812vw;
+        
+        font-size: app.$vh-15px;
+        color: app.$red-500;
+        text-align: center;
+    }
+
+    &.success .input-inner .input,
+    &.error .input-inner .input {
+        background-color: var(--color-surface-hover);
+    }
+
+    &.success .input-inner {
+        .input {
+            border-color: app.$green-500;
+        }
+
+        .right-icon {
+            fill: app.$green-500;
+        }
+    }
+
+    &.error .input-inner {
+        .input {
+            border-color: app.$red-600;
+        }
+
+        .right-icon {
+            fill: app.$red-600;
+        }
+    }
+}

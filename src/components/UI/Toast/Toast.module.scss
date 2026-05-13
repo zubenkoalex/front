@@ -1,0 +1,89 @@
+@use '../../../App.scss' as app;
+
+.toast-conatiner {
+	position: fixed;
+	z-index: 999999;
+
+    font-size: app.$vh-14px;
+	
+    box-sizing: border-box;
+
+    &.bottom-center {
+        bottom: app.$vh-17px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .toast {
+        margin-top: 0.7407vh;
+
+        display: flex;
+        align-items: center;
+        gap: 0.5208vw;
+
+        width: calc(18.2291vw - 1.5625vw - 1.5625vw);
+
+        padding: app.$vh-15px 1.5625vw;
+
+        border: none;
+        border-radius: app.$vh-16px;
+        
+        box-shadow: app.$glass-box-shadow;
+
+        &.success {
+            background: #0E1913;
+        }
+
+        &.info {
+            background: #042545;
+        }
+        &.warning {
+            background: #432B04;
+        }
+        &.error {
+            background: #2D0607;
+        }
+
+        .icon {
+            width: app.$vh-20px;
+            height: app.$vh-20px;
+
+            &.success {
+                fill: #56EDA2;
+            }
+
+            &.info {
+                fill: #60BCF6;
+            }
+
+            &.warning {
+                fill: #F6AB60;
+            }
+
+            &.error {
+                fill: #FF9EA1;
+            }
+        }
+
+        .title {
+            font-size: app.$vh-12px;
+            font-weight: 700;
+            
+            &.success {
+                color: #56EDA2;
+            }
+
+            &.info {
+                color: #60BCF6;
+            }
+
+            &.warning {
+                color: #F6AB60;
+            }
+
+            &.error {
+                color: #FF9EA1;
+            }
+        }
+    }
+}

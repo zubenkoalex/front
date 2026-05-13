@@ -1,0 +1,208 @@
+@use "../../../../../App.scss" as app;
+
+.sessions-page {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    .action-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4166vw;
+
+        padding: app.$vh-15px 0;
+
+        min-width: 9.375vw;
+
+        font-size: app.$vh-15px;
+        font-weight: 700;
+        color: var(--color-text-muted);
+
+        cursor: pointer;
+        
+        border-radius: app.$vh-12px;
+        background: app.alpha(var(--color-surface-soft), 0.5);
+        box-shadow: app.$glass-box-shadow;
+        
+        .icon {
+            height: app.$vh-13px;
+            width: app.$vh-13px;
+
+            fill: var(--color-text-muted);
+
+            &.arrow {
+                transform: rotate(180deg);
+            }
+        }
+
+        &:hover {
+            background: var(--color-surface-elevated);
+        }
+
+        &.back {
+            min-width: 6.7708vw;
+        }
+    }
+
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    
+        padding: 3.2407vh;
+    
+        border-top-left-radius: 3.3333vh;
+        border-top-right-radius: 3.3333vh;
+        border-bottom: app.$vh-2px solid var(--color-border-strong);
+        background: app.alpha(var(--color-text-inverse), 0.1);
+    
+        .sessions-info {
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+
+            font-size: app.$vh-16px;
+            font-weight: 700;
+            color: var(--color-text-muted);
+
+            .count {
+                font-size: app.$vh-18px;
+
+                .active {
+                    color: app.$orange-500;
+                }
+            }
+        }
+    }
+
+    .spinner-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 100%;
+        width: 100%;
+        
+        .spinner {
+            width: 2.7777vh;
+            height: 2.7777vh;
+    
+            border: app.$vh-4px solid app.$ai-adzen--color;
+            border-bottom-color: transparent;
+        }
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 3.7037vh;
+
+        flex: 1;
+        min-height: 0;
+
+        margin: app.$vh-25px 0.5208vw app.$vh-25px 1.8229vw;
+
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: 0.15625vw;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: var(--color-text);
+            border-radius: 10px;
+        }
+
+        .description {
+            max-width: 80%;
+
+            font-size: app.$vh-15px;
+            font-weight: 700;
+            color: var(--color-text-muted);
+        }
+
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4166vw;
+
+            padding: app.$vh-15px 0;
+
+            min-width: 9.375vw;
+
+            font-size: app.$vh-15px;
+            font-weight: 700;
+            color: var(--color-text-muted);
+
+            cursor: pointer;
+            
+            border: none;
+            border-radius: app.$vh-12px;
+            background: app.alpha(var(--color-surface-soft), 0.5);
+            box-shadow: app.$glass-box-shadow;
+
+            &:hover {
+                color: var(--color-text);
+                background: var(--color-surface-soft);
+            }
+
+            &.end-sessions:hover  {
+                color: app.$red-600;
+                background: app.alpha(app.$red-600, 0.05);
+            }
+        }
+
+        .inactivity-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5208vw;
+
+            .inactivity {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.2604vw;
+
+                padding: app.$vh-17px 1.5625vw;
+
+                font-size: app.$vh-14px;
+                font-weight: 700;
+                color: var(--color-text-muted);
+
+                border-radius: 0.7407vh;
+                background: var(--color-surface-soft);
+                box-shadow: app.$glass-box-shadow;
+
+                .value {
+                    color: var(--color-text);
+                }
+            }
+        }
+
+        .devices {
+            display: flex;
+            flex-direction: column;
+            gap: app.$vh-20px;
+
+            max-width: 80%;
+
+            .title {
+                font-size: app.$vh-18px;
+                font-weight: 700;
+                color: var(--color-text-muted);
+            }
+
+            .button {
+                padding: app.$vh-15px 2.8645vw;
+
+                width: fit-content;
+            }
+        }
+    }
+}

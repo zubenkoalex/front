@@ -1,0 +1,85 @@
+@use "../../../App.scss" as app;
+
+
+.card-container {
+    position: relative;
+
+    .card {
+        position: relative;
+        height: 100%;
+
+        .layout {
+            position: relative;
+
+            padding: 2.9629vh;
+            
+            height: -webkit-fill-available;
+            
+            overflow: hidden;
+            
+            border-radius: app.$vh-16px;
+            border: app.$vh-1px solid var(--color-stroke);
+
+            background: var(--color-surface);
+            backdrop-filter: blur(app.$vh-4px);
+
+
+            .content {
+                display: flex;
+                flex-direction: column;
+                gap: app.$vh-12px;
+
+                position: relative;
+
+                .icon-container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    height: 5.9259vh;
+                    width: 5.9259vh;
+
+                    border-radius: app.$vh-16px;
+                    box-shadow: 0 app.$vh-10px app.$vh-15px calc(-1 * app.$vh-3px) app.alpha(var(--color-text-inverse), 0.1), 
+                    0 app.$vh-4px app.$vh-6px calc(-1 * app.$vh-2px) app.alpha(var(--color-text-inverse), 0.05);
+                    transition: transform 0.8s ease;
+
+                    &:hover {
+                        transform: rotate(360deg) scale(1.1);
+                    }
+
+                    .icon {
+                        width: 2.9629vh;
+                        height: 2.9629vh;
+                        fill: var(--color-text);
+                    }
+                }
+
+                .name {
+                    display: flex;
+                    flex-direction: column;
+                    gap: app.$vh-12px;
+
+                    margin-top: app.$vh-12px;
+
+                    .title {
+                        font-size: app.$vh-20px;
+                        font-weight: 600;
+                        color: var(--color-text);
+                    }
+    
+                    .description {
+                        font-size: app.$vh-16px;
+                        font-weight: 500;
+                        color: app.$gray-400;
+    
+                        line-height: 1.75;
+                    }
+                }
+
+            }
+        }
+
+        
+    }
+}

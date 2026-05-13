@@ -1,0 +1,1046 @@
+volatus: $300 000 000
+swift2: $240 000 000
+swift: $200 000 000
+supervolito2: $160 000 000
+supervolito: $140 000 000
+buzzard2: $100 000 000
+frogger: $80 000 000
+seasparrow2: $80 000 000
+maverick: $50 000 000
+avisa: $40 000 000
+tourbillon: $36 200 000
+submersible2: $35 000 000
+utopia: $34 500 000
+cc850: $34 500 000
+huayrar: $33 400 000
+mistral: $33 400 000
+bolide: $32 800 000
+noire: $31 700 000
+bdivo: $31 700 000
+nevera: $31 300 000
+jesko20: $30 700 000
+amgone: $30 100 000
+submersible: $30 000 000
+tecnomar: $30 000 000
+chiron19: $29 600 000
+terzo: $29 500 000
+gemera: $29 400 000
+rb001: $29 300 000
+regera: $29 100 000
+918s: $29 000 000
+battista: $28 700 000
+imola: $28 600 000
+agera: $28 400 000
+senna: $28 100 000
+veneno: $28 000 000
+l650: $28 000 000
+lamborghinivision: $28 000 000
+speedtail: $27 700 000
+amgf1: $27 100 000
+sixteen: $27 100 000
+missionr: $26 700 000
+idr: $26 500 000
+ec120: $26 000 000
+fxxk: $25 800 000
+tuatara: $25 400 000
+marquis: $25 000 000
+bell429: $25 000 000
+centenario: $24 600 000
+invencible: $24 200 000
+temerario: $24 200 000
+laferrari: $24 000 000
+ec135: $24 000 000
+daytona: $23 900 000
+revuelto: $23 300 000
+avtr: $23 000 000
+j50: $22 700 000
+ah6: $22 000 000
+artura: $22 000 000
+essenza: $21 300 000
+batur: $20 500 000
+longfin: $20 000 000
+aeroboat: $20 000 000
+xclass2: $20 000 000
+semi: $20 000 000
+asvj: $19 700 000
+purosangue: $19 600 000
+f8: $19 500 000
+sf90: $19 500 000
+monza: $19 500 000
+ferrari812: $19 500 000
+720s: $19 300 000
+countach: $19 000 000
+mp1: $19 000 000
+valour: $18 900 000
+volatusc: $18 750 000 150 000
+evija: $18 600 000
+veyron: $18 500 000
+huracan: $18 000 000
+fordgt: $18 000 000
+r66: $18 000 000
+lanzador: $17 900 000
+488pista: $17 800 000
+rrphantom: $17 600 000
+cullinan: $17 600 000
+ghost2: $17 600 000
+spectre: $17 500 000
+urus: $17 200 000
+vanquish2: $17 200 000
+huracan2: $17 100 000
+ff12: $16 900 000
+bentayga2: $16 900 000
+spur: $16 900 000
+porsche935: $16 900 000
+actros: $16 000 000
+amggt2: $16 000 000
+rrphantom2: $15 900 000
+dbx: $15 700 000
+vulcan: $15 600 000
+cayenne2: $15 600 000
+tug: $15 000 000
+roma: $14 900 000
+mc20: $14 400 000
+wraithb: $14 300 000
+sls: $14 200 000
+regalia: $14 000 000
+reventon: $13 900 000
+escalade2: $13 900 000
+db12: $13 900 000
+bacalar: $13 600 000
+sclass4: $13 200 000
+dawn: $12 800 000
+lc500: $12 700 000
+swiftc: $12 500 000 100 000
+t680: $12 500 000 25 000
+gallardo: $12 400 000
+m7g70: $12 200 000
+amggt: $12 100 000
+db11: $12 000 000
+hotwheels: $12 000 000
+bentaygast: $12 000 000
+db112: $12 000 000
+sclass3: $11 900 000
+pullman: $11 900 000
+xm: $11 500 000
+g63: $11 300 000
+sl: $11 200 000
+gclass4: $11 100 000
+rrs: $11 100 000
+ghost: $11 000 000
+continental: $10 800 000
+taycan: $10 600 000
+cayen19: $10 600 000
+panamera2: $10 600 000
+toro2: $10 500 000
+eclass3: $10 500 000
+gt63s: $10 500 000
+ab2: $10 400 000
+etron2: $10 400 000
+x6m2: $10 200 000
+5series: $10 200 000
+pts21: $10 200 000
+m8gc: $10 200 000
+toro: $10 000 000
+supervolito2c: $10 000 000 80 000
+a8: $10 000 000
+xk: $10 000 000
+gle2: $9 900 000
+e63s: $9 900 000
+gtr50: $9 900 000
+emira: $9 700 000
+x5g05: $9 700 000
+m5comp: $9 700 000
+cybertruck: $9 500 000
+eqs: $9 500 000
+corvette2: $9 400 000
+lfa: $9 400 000
+q8: $9 300 000
+rs72: $9 300 000
+63gls2: $9 300 000
+speeder2: $9 000 000
+bmwx7: $9 000 000
+r820: $8 900 000
+f40: $8 900 000
+ct5: $8 800 000
+supervolitoc: $8 750 000 70 000
+xclass: $8 700 000
+eclass4: $8 700 000
+ex90: $8 600 000
+speeder: $8 500 000
+s63cab: $8 500 000
+g63amg6x6: $8 400 000
+panamera17turbo: $8 400 000
+lil9: $8 300 000
+m850: $8 300 000
+macan2: $8 200 000
+cle: $7 800 000
+xts: $7 700 000
+etron: $7 600 000
+hummer2: $7 500 000
+ram2: $7 500 000
+tt2: $7 500 000
+su7: $7 500 000
+tt: $7 400 000
+ast: $7 400 000
+lx600: $7 400 000
+cls63s: $7 300 000
+q7: $7 300 000
+diablo: $7 200 000
+hummer3: $7 200 000
+levante: $7 200 000
+bmwm7: $7 100 000
+jetmax: $7 000 000
+f1502: $7 000 000
+glc: $7 000 000
+viper: $6 900 000
+s63w222: $6 900 000
+hummer: $6 800 000
+f150: $6 800 000
+rs6: $6 700 000
+m3g81: $6 600 000
+wrx: $6 500 000
+mustang3: $6 500 000
+air: $6 500 000
+luxor2: $6 300 000
+lex570: $6 300 000
+c300: $6 300 000
+5series2: $6 300 000
+buzzard2c: $6 250 000 50 000
+testarossa: $6 200 000
+brutale: $6 000 000
+m4comp: $5 800 000
+cls2: $5 800 000
+ftype: $5 700 000
+lc300: $5 700 000
+nisgtr: $5 700 000
+m2g42: $5 700 000
+lc150: $5 625 000
+d8: $5 600 000
+i82: $5 600 000
+zeekr009: $5 600 000
+tundra: $5 600 000
+tropic2: $5 500 000
+maloo: $5 500 000
+corvett08: $5 500 000
+vclass: $5 400 000
+gladiator: $5 400 000
+ix: $5 300 000
+audir8: $5 300 000
+gle63: $5 200 000
+nsx: $5 200 000
+rc16: $5 100 000
+tropic: $5 000 000
+froggerc: $5 000 000 40 000
+sparrowc: $5 000 000 40 000
+hummer6: $5 000 000
+rs5: $5 000 000
+s1000rr: $4 900 000
+i8: $4 800 000
+718bs: $4 800 000
+z800: $4 800 000
+rs7: $4 700 000
+v4sp: $4 700 000
+diavel: $4 700 000
+5series3: $4 600 000
+model3: $4 500 000
+m4f82: $4 400 000
+rc211v: $4 375 000
+eclass5: $4 300 000
+z4b: $4 300 000
+turbor: $4 200 000
+polestar: $4 200 000
+defender: $4 100 000
+f7: $4 100 000
+squalo: $4 000 000
+phantom: $4 000 000
+snowmobile: $4 000 000
+ev6: $4 000 000
+bentley8: $4 000 000
+sportage: $3 900 000
+x6m: $3 800 000
+velar: $3 800 000
+400z: $3 800 000
+mustang4: $3 750 000
+slr2: $3 750 000
+models: $3 700 000
+silverado: $3 600 000
+63gls: $3 600 000
+x5me70: $3 600 000
+brz: $3 500 000
+nsx2: $3 500 000
+bronco: $3 500 000
+q60s: $3 400 000
+macan: $3 400 000
+giulia: $3 400 000
+victoria2: $3 400 000
+packer: $3 320 000
+m12b: $3 300 000
+2020mustang: $3 300 000
+m5e60: $3 300 000
+msprinter: $3 200 000 7 999
+cla: $3 200 000
+maverickc: $3 125 000 25 000
+express: $3 125 000
+fx50s: $3 100 000
+16challenger: $3 100 000
+modelx: $3 000 000
+rrab: $3 000 000
+camaro21: $3 000 000
+350z: $3 000 000
+charger20: $2 900 000
+ram: $2 900 000
+hummer5: $2 900 000
+dsprinter: $2 800 000 6 999
+k5: $2 800 000
+gsx1000: $2 800 000
+m3e46: $2 800 000
+xc90: $2 800 000
+hauler: $2 660 000
+cesc21: $2 600 000
+bmwg20: $2 600 000
+countryman: $2 600 000
+suntrap: $2 500 000
+chrysler300: $2 500 000
+g55: $2 500 000
+tahoe2: $2 500 000
+gtr32: $2 500 000
+cx5: $2 500 000
+skyline: $2 400 000
+ml: $2 400 000
+hotwheels2: $2 300 000
+touareg: $2 300 000
+aclass2: $2 300 000
+xes: $2 200 000
+jgc: $2 200 000
+explorer: $2 200 000
+countach2: $2 200 000
+viper2: $2 187 500
+rx8: $2 100 000
+rr3: $2 100 000
+lc200: $2 000 000
+aclass: $2 000 000
+eclipse: $1 900 000
+kiastinger: $1 900 000
+yz450f: $1 900 000
+defender2: $1 875 000
+supragr: $1 875 000
+rx7: $1 843 750
+370z: $1 812 500
+golf3: $1 800 000
+durango: $1 800 000
+touareg2: $1 800 000
+creta: $1 800 000
+a80: $1 781 250
+s15: $1 750 000
+s2000: $1 700 000
+charger3: $1 700 000
+mark2: $1 625 000
+syclone: $1 600 000
+evo10: $1 600 000
+camry70: $1 600 000
+focusrs: $1 600 000
+camry2: $1 600 000
+delorean: $1 600 000
+bmwm1: $1 600 000
+guardian: $1 500 000
+evo9: $1 500 000
+slr: $1 500 000
+mazda3: $1 500 000
+nspeedo: $1 400 000
+db5: $1 400 000
+firebird: $1 400 000
+mjc: $1 400 000
+astra: $1 300 000
+w210: $1 300 000
+bmwe39: $1 300 000
+mx5: $1 300 000
+p928: $1 250 000
+a42: $1 250 000
+golf7r: $1 200 000
+carrera: $1 100 000
+accord: $1 100 000
+subwrx: $1 100 000
+s600: $1 100 000
+bmwe38: $1 100 000
+dinghy: $1 000 000
+polbuz: Нет гос. стоимости
+polbuz2: Нет гос. стоимости
+polbuz3: Нет гос. стоимости
+polbuz4: Нет гос. стоимости
+polbuz5: Нет гос. стоимости
+polbuz6: Нет гос. стоимости
+f1503: $1 000 000
+victoria: $1 000 000
+gnx: $1 000 000
+cclass2: $1 000 000
+wrangler: $1 000 000
+taurus: $1 000 000
+octavia18: $1 000 000
+civic2: $1 000 000
+corvette3: $1 000 000
+rsx: $1 000 000
+fairlady: $1 000 000
+mule: $930 000
+mustang2: $900 000
+charger2: $900 000
+paradise: $866 000
+benson: $800 000
+polo: $800 000
+a4: $800 000
+camaro2: $800 000
+urban: $800 000
+firebird2: $800 000
+camaro3: $800 000
+galant: $750 000
+rio: $750 000
+pony2: $730 000
+pounder: $700 000
+rio2: $700 000
+rio3: $700 000
+logan: $700 000
+impala: $700 000
+190e: $700 000
+vesta: $650 000
+ae862: $625 000
+dinghy2: $600 000
+solaris: $600 000
+3series3: $600 000
+ae86: $562 500
+riot2: Нет гос. стоимости
+modelt: $500 000
+priora: $500 000
+barracuda: $500 000
+riot: Нет гос. стоимости
+burrito3: $440 000
+seashark3: $400 000
+samara: $400 000
+civic: $400 000
+impala2: $400 000
+peugeot308: $400 000
+virtue: $397 000
+youga: $395 000
+bison4: $390 000
+italirsx: $383 000
+torero2: $376 000
+polmav: Нет гос. стоимости
+krieger: $357 000
+vaz2109: $350 000
+emerus: $349 000
+ignus: $346 000
+paragon3: $345 000
+jackgpr: $344 000
+pipistrello: $341 000
+prototipo: $340 000
+tigon: $337 000
+turismo3: $337 000
+tenf2: $335 000
+pariah: $334 000
+thrax: $333 000
+bison: $332 000
+italigto: $331 000
+cyclone: $329 000
+vagner: $329 000
+zeno: $329 000
+entity2: $327 000
+pfister811: $327 000
+nero: $326 000
+nero2: $326 000
+tezeract: $323 000
+tyrant: $323 000
+zentorno: $323 000
+openwheel1: $322 000
+italigtb: $321 000
+italigtb2: $321 000
+zorrusso: $321 000
+tenf: $320 000
+formula: $318 000
+tempesta: $318 000
+neo: $316 000
+visione: $316 000
+lm87: $316 000
+t20: $314 000
+xa21: $313 000
+vstr: $312 000
+furia: $312 000
+weevil2: $311 000
+osiris: $311 000
+formula2: $310 000
+corsita: $308 000
+entityxf: $308 000
+gp1: $308 000
+castigator: $305 000
+pentrogpr: $305 000
+pentrogpr2: $305 000
+champion: $304 000
+comet7: $303 000
+openwheel2: $302 000
+toros: $302 000
+schlagen: $301 000
+tyrus: $301 000
+seashark: $300 000
+bulletems: $300 000
+coquetteems: $300 000
+dominator3ems: $300 000
+vigero2ems: $300 000
+tor_police_buffalo: $300 000
+tor_police_contender: $300 000
+tor_police_cruiser: $300 000
+tor_police_cruiser2: $300 000
+tor_police_insurgent: $300 000
+tor_police_scout: $300 000
+tor_police_scout_k9: $300 000
+tor_police_speedo: $300 000
+tor_police_speedunit: $300 000
+tor_sheriff_cruiser: $300 000
+tor_sheriff_cheval: $300 000
+tor_sheriff_granger: $300 000
+tor_sheriff_insurgent: $300 000
+tor_sheriff_scout: $300 000
+tor_sheriff_scout_k9: $300 000
+tor_sheriff_speedunit: $300 000
+tor_sheriff_unmarked: $300 000
+tor_sang_insurgent: $300 000
+tor_fib_insurgent: $300 000
+tor_fib_armor1: $300 000
+tor_fib_jugular: $300 000
+tor_fib_speedo: $300 000
+tor_fib_neon: $300 000
+tor_fib_novak: $300 000
+tor_fib_caracara: $300 000
+tor_fib_gresley: $300 000
+tor_unmarked_scout: $300 000
+tor_fib_speedunit: $300 000
+tor_fib_speedunit1: $300 000
+bcat: $300 000
+emsnspeedo: $300 000
+emsroamer: $300 000
+pscoutnew: $300 000
+swatstalker: $300 000
+matiz: $300 000
+vaz2107: $300 000
+mustang5: $300 000
+amazon: $300 000
+komoda: $299 000
+neon: $299 000
+deveste: $297 000
+fmj: $297 000
+reaper: $297 000
+sm722: $296 000
+entity3: $293 000
+jester5: $293 000
+coquette4: $291 000
+panthere: $291 000
+rhinehart: $290 000
+raiden: $290 000
+turismor: $290 000
+schafter3: $289 000
+envisage: $287 000
+sultanrs: $286 000
+taipan: $283 000
+carbonizzare: $282 000
+rebla: $281 000
+massacro: $281 000
+massacro2: $281 000
+comet6: $281 000
+everon2: $281 000
+penetrator: $281 000
+bestiagts: $276 000
+calico: $276 000
+jester4: $275 000
+ferocid: $274 000
+cheetah: $273 000
+pbus2: Нет гос. стоимости
+growler: $272 000
+seven70: $271 000
+gauntlet6: $271 000
+baller8: $271 000
+novak: $269 000
+schafter5: $269 000
+sc1: $269 000
+autarch: $268 000
+infernus: $267 000
+le7b: $267 000
+cinquemila: $267 000
+adder: $266 000
+s80: $266 000
+vacca: $266 000
+stingertt: $264 000
+surano: $263 000
+sheava: $263 000
+coquette5: $263 000
+ztype: $262 000
+buffalo4: $262 000
+banshee2: $261 000
+zr380s: $261 000
+scout: $261 000
+jester3: $260 000
+sentinel4: $260 000
+terminus: $260 000
+lynx: $259 000
+locust: $257 000
+rapidgt: $257 000
+rapidgt2: $257 000
+cheetah2: $257 000
+comet5: $256 000
+furoregt: $256 000
+imorgon: $256 000
+specter2: $256 000
+insurgent: $254 000
+insurgent3: $254 000
+vorschlaghammer: $254 000
+jester2: $252 000
+niobe: $252 000
+ninef: $251 000
+ninef2: $251 000
+zr380c: $251 000
+gauntlet4: $250 000
+r300: $250 000
+coquette: $248 000
+verlierer2: $248 000
+sultan3: $248 000
+monroe: $248 000
+insurgent2: $247 000
+sultan2: $247 000
+omnisegt: $247 000
+rapidgt3: $247 000
+astron: $247 000
+specter: $246 000
+viseris: $246 000
+comet2: $245 000
+feltzer2: $244 000
+paragon: $244 000
+sugoi: $244 000
+comet3: $243 000
+revolter: $243 000
+dominator9: $243 000
+fr36: $243 000
+drafter: $241 000
+powersurge: $240 000
+paragon2: $239 000
+sigma2: $239 000
+alpha: $236 000
+comet4: $236 000
+jester: $236 000
+deluxo: $236 000
+casco: $235 000
+elegy2: $234 000
+pigalle: $233 000
+swinger: $230 000
+vincent2: $230 000
+vagrant: $227 000
+hotring: $227 000
+zionks: $225 000
+windsor: $222 000
+kamacho: $222 000
+flashgt: $222 000
+dominator2: $221 000
+fusilade: $221 000
+vectre: $221 000
+gauntlets: $221 000
+draugur: $219 000
+infernus2: $219 000
+jb7002: $219 000
+jb700: $217 000
+bullet: $217 000
+predator: Нет гос. стоимости
+sultan: $216 000
+gauntlet5: $215 000
+rt3000: $214 000
+dominator10: $214 000
+windsor2: $210 000
+dominator7: $210 000
+tailgater2: $210 000
+buffalo3: $210 000
+retinue2: $210 000
+youga3: $210 000
+futo: $208 000
+dominator: $207 000
+elegy: $207 000
+shinobi: $207 000
+cypher: $206 000
+coquette2: $205 000
+clubgtr: $204 000
+oracle2: $202 000
+sabregt2: $202 000
+torero: $202 000
+rcbandito: $200 002
+remus: $200 000
+speedo5: $200 000
+mule5: $200 000
+golf2: $200 000
+fury: $200 000
+beetle: $200 000
+belair: $200 000
+nightshark: $199 000
+ruston: $199 000
+penumbra2: $198 000
+hellion2: $197 000
+imperator: $196 000
+imperator2: $196 000
+imperator3: $196 000
+schwarzer: $196 000
+dominator4: $195 000
+dominator6: $195 000
+euros: $195 000
+ruiner2: $194 000
+kuruma: $194 000
+voltic: $194 000
+oracle: $193 000
+previon: $193 000
+ardent: $193 000
+f620: $192 000
+felon: $192 000
+ruiner: $192 000
+greenwood: $191 000
+buffalo2: $190 000
+gb200: $190 000
+issi7: $190 000
+brawler: $189 000
+turismo2: $189 000
+akuma: $188 000
+hustler: $188 000
+cog55: $188 000
+cog552: $187 000
+exemplar: $185 000
+jackal: $183 000
+tropos: $183 000
+mamba: $183 000
+jubilee: $182 000
+impaler3: $181 000
+impaler4: $181 000
+peyote2: $181 000
+menacer: $180 000
+superd: $180 000
+sadler: $180 000
+surfer3: $180 000
+toreador: $179 000
+baller7: $179 000
+sentinel3: $178 000
+aleutian: $178 000
+ratel: $176 000
+cognoscenti: $176 000
+buffalo: $176 000
+schafter4: $176 000
+streiter: $176 000
+tampa2: $176 000
+deity: $176 000
+seraph3: $176 000
+cavalcade3: $175 000
+bati2: $174 000
+thrust: $174 000
+futo2: $174 000
+sanctus: $173 000
+dominator5: $173 000
+cognoscenti2: $173 000
+omnis: $173 000
+zion2: $172 000
+hakuchou: $172 000
+savestra: $172 000
+cogcabrio: $171 000
+bati: $171 000
+tulip2: $171 000
+dubsta3: $171 000
+iwagen: $170 000
+impaler6: $170 000
+zion: $169 000
+vortex: $169 000
+impaler2: $169 000
+coureur: $169 000
+mesa3: $167 000
+vindicator: $166 000
+everon: $166 000
+huntley: $166 000
+reever: $166 000
+dukes2: $165 000
+issi8: $165 000
+zion3: $165 000
+ruiner4: $164 000
+vigero2: $164 000
+zr350: $164 000
+gauntlet2: $163 000
+deathbike: $162 000
+deathbike2: $162 000
+stromberg: $162 000
+felon2: $161 000
+buffalo5: $161 000
+vigero3: $161 000
+impaler5: $161 000
+baller3: $160 000
+retinue: $160 000
+youga2: $160 000
+boor: $159 000
+stingergt: $159 000
+baller4: $158 000
+contender: $158 000
+xls2: $157 000
+clique: $156 000
+baller2: $156 000
+schafter2: $156 000
+sentinel2: $155 000
+granger: $155 000
+banshee: $155 000
+gt500: $155 000
+baller5: $154 000
+stinger: $154 000
+brutus: $152 000
+brutus2: $152 000
+brutus3: $152 000
+btype2: $150 000
+gauntlet: $149 000
+yosemite: $149 000
+yosemiteswb: $149 000
+issi4: $148 000
+issi5: $148 000
+impaler: $148 000
+tampa3: $148 000
+glendale2: $148 000
+cheburek: $148 000
+baller6: $147 000
+tulip: $146 000
+dominator8: $146 000
+khamelion: $146 000
+xls: $145 000
+schafter6: $145 000
+gargoyle: $144 000
+lurcher: $144 000
+dorado: $144 000
+hermes: $142 000
+eurosx32: $142 000
+cliffhanger: $141 000
+club: $140 000
+peyote3: $140 000
+defiler: $139 000
+washington: $139 000
+michelli: $139 000
+esskey: $137 000
+rocoto: $137 000
+double: $136 000
+caracara2: $136 000
+tahoma: $135 000
+kanjosj: $134 000
+coquette3: $134 000
+penumbra: $133 000
+bobcatxl: $133 000
+vamos: $132 000
+l35: $132 000
+trophytruck: $131 000
+trophytruck2: $131 000
+fugitive: $131 000
+glendale: $131 000
+yosemite1500: $131 000
+kanjo: $130 000
+manana2: $130 000
+z190: $130 000
+dukes: $129 000
+intruder: $129 000
+sentinel: $128 000
+granger2: $127 000
+s230: $127 000
+schwartzerc: $126 000
+buccaneer: $125 000
+faction2: $125 000
+phoenix: $125 000
+vigero: $125 000
+zhaba: $125 000
+monstrociti: $125 000
+tailgater: $125 000
+buccaneer2: $124 000
+stalion2: $124 000
+bruiser3: $124 000
+stanier: $124 000
+dubsta2: $123 000
+asterope: $123 000
+ruffian: $122 000
+monster3: $122 000
+monster4: $122 000
+monster5: $122 000
+docktug: $122 000
+dominator3: $121 000
+dubsta: $121 000
+warrener2: $121 000
+sabregt: $120 000
+fq2: $120 000
+police2: Нет гос. стоимости
+faction: $119 000
+stalion: $119 000
+stretch: $119 000
+raptor: $119 000
+pentro: $119 000
+pentro2: $119 000
+avarus: $118 000
+bruiser2: $118 000
+premier: $117 000
+slamvan2: $116 000
+hellion: $116 000
+yosemite3: $116 000
+baller: $116 000
+habanero: $116 000
+landstalker2: $116 000
+asea: $116 000
+primo: $116 000
+stratum: $116 000
+btype: $116 000
+pentro3: $116 000
+sanchez2: $115 000
+radi: $115 000
+limo2: $115 000
+btype3: $115 000
+carbonrs: $114 000
+blade: $114 000
+caracara: $113 000
+primo2: $113 000
+vivanite: $113 000
+postlude: $112 000
+bf400: $112 000
+manchez: $112 000
+slamvan3: $112 000
+gresley: $112 000
+warrener: $112 000
+blista2: $112 000
+firetruk: Нет гос. стоимости
+blista: $111 000
+diablous: $111 000
+brioso: $110 000
+freecrawler: $110 000
+riata: $110 000
+serrano: $110 000
+blista3: $110 000
+feltzer3: $110 000
+hotknife: $109 000
+slamvan: $109 000
+patriot: $109 000
+patriot2: $109 000
+issi2: $108 000
+nightblade: $108 000
+yosemite2: $108 000
+bifta: $108 000
+outlaw: $108 000
+seminole2: $108 000
+deviant: $107 000
+gauntlet3: $107 000
+slamvan4: $107 000
+slamvan5: $107 000
+policet: Нет гос. стоимости
+fcr2: $105 000
+ellie: $104 000
+sandking: $104 000
+landstalker: $104 000
+nebula: $104 000
+brigham: $103 000
+cavalcade: $103 000
+cavalcade2: $103 000
+fcr: $101 000
+panto: $99 000
+eudora: $99 000
+tampa: $98 000
+stafford: $98 000
+fbi: Нет гос. стоимости
+nemesis: $96 000
+moonbeam: $95 000
+bjxl: $95 000
+weevil: $94 000
+seminole: $94 000
+prairie: $93 000
+rhapsody: $92 000
+brioso3: $92 000
+sandking2: $91 000
+manana: $91 000
+emperor: $88 000
+dukes3: $86 000
+surge: $86 000
+pranger: Нет гос. стоимости
+stryder: $85 000
+moonbeam2: $85 000
+lectro: $84 000
+mesa: $84 000
+fagaloa: $84 000
+innovation: $82 000
+virgo2: $82 000
+dynasty: $82 000
+nightshade: $81 000
+inductor: $80 000
+rancherxl: $80 000
+tornado: $80 000
+tornado2: $80 000
+asbo: $79 000
+ratloader2: $79 000
+ingot: $79 000
+dilettante: $78 000
+tornado5: $77 000
+rrocket: $76 000
+peyote: $76 000
+rebel2: $74 000
+camper: $72 000
+patriot3: $72 000
+kalahari: $71 000
+pbus: Нет гос. стоимости
+dune3: $70 000
+vader: $69 000
+picador: $69 000
+police3: Нет гос. стоимости
+broadway: $68 000
+regina: $67 000
+faction3: $66 000
+speedo: $66 000
+ambulance: Нет гос. стоимости
+brioso2: $63 000
+trash: $62 000
+voodoo: $61 000
+issi3: $60 000
+virgo: $60 000
+zombieb: $57 000
+bfinjection: $57 000
+blazer4: $56 000
+virgo3: $54 000
+journey: $54 000
+clique2: $52 000
+blazer5: $50 000
+tornado6: $50 000
+daemon: $49 000
+romero: $49 000
+veto2: $47 000
+daemon2: $47 000
+chino: $47 000
+chino2: $47 000
+zombiea: $46 000
+tornado3: $44 000
+tornado4: $44 000
+sovereign: $42 000
+chimera: $41 000
+hexer: $41 000
+manchez2: $41 000
+fbi2: Нет гос. стоимости
+dune: $40 000
+manchez3: $39 000
+sheriff2: Нет гос. стоимости
+rebel: $38 000
+pcj: $37 000
+bodhi2: $37 000
+dune2: $37 000
+lguard: Нет гос. стоимости
+policeb: Нет гос. стоимости
+emperor2: $34 000
+police: Нет гос. стоимости
+veto: $32 000
+blazer: $32 000
+verus: $32 000
+speedo2: $32 000
+blazer3: $30 000
+enduro: $28 000
+technical2: $26 000
+voodoo2: $25 000
+ratloader: $24 000
+taco: $23 000
+utillitruck3: $22 000
+caddy: $20 400
+wolfsbane: $15 000
+bagger: $13 000
+faggio: $10 000
+tribike: $9 000
+tribike2: $9 000
+tribike3: $9 000
+faggio2: $8 000
+scorcher: $6 000
+fixter: $4 000
+bmx: $2 000
+cruiser: $2 000

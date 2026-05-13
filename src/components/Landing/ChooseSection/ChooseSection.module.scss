@@ -1,0 +1,153 @@
+@use "../../../App.scss" as app;
+
+.blobs {
+    position: absolute;
+    inset: 0;
+
+    opacity: 0.2;
+
+    .blob {    
+        height: 55.5555vh;
+        width: 55.5555vh;
+    
+        filter: blur(13.8888vh);
+        
+        animation-duration: 2s;
+    
+        &.top-left {
+            top: 0;
+            left: 0;
+        }
+    
+        &.right-bottom {
+            bottom: 0;
+            right: 0;
+        }
+    }
+}
+
+
+.stats-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25vw;
+
+    margin: app.$vh-24px 0 app.$vh-8px 0;
+
+    .glow {
+        position: absolute;
+        inset: 0;
+
+        filter: blur(app.$vh-24px);
+
+        border-radius: app.$vh-16px;
+        background: linear-gradient(to right, app.alpha(app.$orange-500, 0.2), app.alpha(app.$pink-500, 0.2));
+        
+        transition: filter 0.3s ease;
+    }
+
+    .stats-container:hover {
+        .glow {
+            filter: blur(3.9173vh);
+        }
+
+        .stats-layout {
+            background: app.alpha(var(--color-text), 0.07);
+        }
+    }
+
+    .stats-content {
+        align-items: center !important;
+    }
+
+    .stats-name {
+        flex-direction: column-reverse !important;
+        align-items: center !important;
+        gap: app.$vh-8px !important;
+
+        margin-top: app.$vh-4px !important;
+    }
+}
+
+.benefits-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25vw;
+
+    margin-bottom: app.$vh-8px;
+
+    .border-gradient {
+        position: absolute;
+        inset: calc(-1 * app.$vh-2px);
+
+        opacity: 0;
+        filter: blur(app.$vh-4px);
+
+        border-radius: app.$vh-16px;
+
+        transition: opacity 0.3s ease;
+    }
+
+    .background-gradient {
+        position: absolute;
+        inset: 0;
+
+        opacity: 0;
+
+        border-radius: app.$vh-16px;
+
+        transition: opacity 0.5s ease;
+    }
+
+    .benefits-content {
+        flex-direction: row !important;
+        align-items: center;
+        gap: app.$vh-24px !important;
+    }
+
+    .benefits-name {
+        gap: app.$vh-8px !important;
+        margin-top: 0 !important;
+    }
+
+    .benefits-container:hover {
+        .border-gradient {
+            opacity: 0.2;
+        }
+
+        .background-gradient {
+            opacity: 0.2;
+        }
+    }
+}
+
+.actions {
+    margin: 0 auto;
+
+    .action {
+        width: fit-content;
+    
+        .action-content {
+            gap: 0.7812vw;
+        }
+    
+        .icon {
+            height: app.$vh-16px;
+            width: app.$vh-16px;
+    
+            fill: var(--color-text);
+        }
+    
+        &:hover {
+            transform: scale(1.05);
+    
+            .icon {
+                transform: translateX(0.2604vw);
+            }
+        } 
+    
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+}

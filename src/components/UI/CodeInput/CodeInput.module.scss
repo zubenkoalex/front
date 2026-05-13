@@ -1,0 +1,70 @@
+@use '../../../App.scss' as app;
+
+.wrapper {
+    display: inline-block;
+    position: relative;
+
+    .input {
+        width: 1.604vw;
+
+        padding:  app.$vh-16px app.$vh-12px;
+        
+        font-size: app.$vh-22px;
+        font-weight: 900;
+        color: app.$gray-400;
+
+        outline: none;
+        text-align: center;
+
+        border-radius: app.$vh-20px;
+        border: app.$vh-3px solid var(--color-stroke);
+        background: var(--color-surface);
+        
+        &:hover {
+            border-color: app.$orange-500;
+            background-color: var(--color-surface-hover);
+        }
+
+        &:focus {
+           color: var(--color-text);
+
+            border-color: app.$orange-500;
+            background-color: var(--color-surface-hover);
+        }
+
+        &:disabled {
+            opacity: 0.25;
+            background-color: var(--color-surface-hover);
+        }
+    }
+
+    &.success .input,
+    &.error .input {
+        background-color: var(--color-surface-hover);
+    }
+
+    &.success .input {
+        border-color: app.$green-500;
+    }
+
+    &.error .input {
+        border-color: app.$red-500;
+        animation: shaking 450ms ease;
+    }
+
+    @keyframes shaking {
+        0%,
+        100% {
+            transform: translateX(0);
+        }
+
+        25%,
+        75% {
+            transform: translateX(10px);
+        }
+
+        50% {
+            transform: translateX(-10px);
+        }
+    }
+}

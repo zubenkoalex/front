@@ -1,0 +1,68 @@
+@use "../../../../App.scss" as app;
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: app.$vh-20px;
+
+    padding: app.$vh-25px;
+
+    height: 100%;
+
+    border: none;
+    border-radius: app.$vh-20px;
+
+    background-color: app.alpha(var(--color-text), 0.01);
+    box-shadow: app.$glass-box-shadow;
+
+    .input-container {
+        display: flex;
+        flex-direction: column;
+        gap: app.$vh-5px;
+
+        .label {
+            font-size: app.$vh-13px;
+            font-weight: 700;
+            color: var(--color-text);
+        }
+
+        .input {
+            padding: app.$vh-15px 0.7812vw;
+
+            height: 100%;
+            width: -webkit-fill-available;
+
+            font-size: app.$vh-15px;
+            font-weight: 700;
+
+            resize: none;
+            word-wrap: break-word;
+
+            border: none;
+            border-radius: app.$vh-14px;
+
+            background-color: app.alpha(var(--color-text), 0.03);
+            box-shadow: app.$glass-box-shadow;
+        }
+
+        .input-inner {
+            border-radius: app.$vh-14px;
+            overflow: hidden;
+        }
+
+        .dropdown {
+            height: 100%;
+        }
+
+        &.full {
+            height: 100%;
+        }
+    }
+
+    .group-inputs {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: app.$vh-20px 1.3020vw;
+    }
+}

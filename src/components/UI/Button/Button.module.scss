@@ -1,0 +1,79 @@
+@use "../../../App.scss" as app;
+
+.button {
+    color: var(--color-text);
+
+    position: relative;
+
+    font-size: app.$vh-16px;
+    font-weight: 500;   
+
+    cursor: pointer;
+
+    border: none;
+    border-radius: app.$vh-rounded;
+
+    &.loading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        .spinner {
+            width: 2.7777vh;
+            height: 2.7777vh;
+    
+            border: app.$vh-4px solid app.alpha(var(--color-text), 0.5);
+            border-bottom-color: transparent;
+        }
+    }
+
+    &.primary {
+        padding: app.$vh-16px 1.6666vw;
+        
+        overflow: hidden;
+
+        background: linear-gradient(to right, app.$orange-500, app.$orange-700);
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, app.$orange-400, app.$pink-500);
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            gap: app.$vh-8px;
+
+            position: relative;
+            z-index: 1;
+        }
+
+        &:hover::before {
+            opacity: 1;
+        }
+    }
+
+    &.secondary {
+        padding: app.$vh-10px 1.25vw;
+    
+        border: app.$vh-1px solid var(--color-stroke);
+        background: var(--color-surface);
+        backdrop-filter: blur(app.$vh-4px);
+        
+        transition: all 0.2s ease;
+    
+        &:hover {
+            background-color: var(--color-surface-hover);
+            border-color: app.alpha(app.$orange-500, 0.5);
+        }
+    }
+
+    &:disabled {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+}

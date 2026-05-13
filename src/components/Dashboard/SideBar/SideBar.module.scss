@@ -1,0 +1,218 @@
+@use "../../../App.scss" as app;
+
+.side-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    position: relative;
+    z-index: 2;
+
+    width: 18.2291vw;
+    height: 100%;
+
+    border-right: app.$vh-1px solid var(--color-border-strong);
+    background: var(--color-modal);
+
+    .content {
+        display: flex;
+        flex-direction: column;
+
+        position: relative;
+
+        height: 100%;
+
+        .header-container {
+            display: flex;
+            flex-direction: column;
+            gap: app.$vh-15px;
+
+            .logotype {
+                display: flex;
+                align-items: center;
+                gap: 0.2604vw;
+
+                flex-shrink: 0;
+
+                .icon {
+                    height: 3.7962vh;
+        
+                    fill: app.$orange-500;
+                }
+                
+                .name {
+                    font-size: app.$vh-24px;
+                    font-weight: 700;
+                    color: app.$orange-500;
+
+                    text-transform: uppercase;
+                }
+            }
+
+            .header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                padding: 2.9629vh 1.25vw;
+            }
+
+            .hidden-header {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: app.$vh-20px;
+
+                padding: 2.9629vh 1.25vw;
+
+                width: -webkit-fill-available;
+
+                position: absolute;
+
+                pointer-events: none;
+
+                .logotype {
+                    visibility: hidden;
+                }
+            }
+
+            .hide-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                max-width: 3.7962vh;
+
+                height: app.$vh-20px;
+                width: app.$vh-20px;
+
+                cursor: pointer;
+
+                .icon {
+                    width: 100%;
+                    height: 100%;
+
+                    fill: app.alpha(var(--color-text), 0.35);
+                }
+
+                &:hover .icon {
+                    fill: app.$orange-500;
+                }
+            }
+        }
+
+        .categories {
+            display: flex;
+            flex-direction: column;
+            gap: app.$vh-10px;
+
+            padding: 3.2407vh 1.25vw;
+
+            overflow-y: scroll;
+            overflow-x: hidden;
+
+            &::-webkit-scrollbar {
+                width: 0.1041vw;
+            }
+    
+            &::-webkit-scrollbar-thumb {
+                background-color: var(--color-text);
+                border-radius: app.$vh-10px;
+            }
+        }
+
+        .context-menu {
+            left: 1.25vw;
+            bottom: calc(-1 * app.$vh-7px);
+
+            width: calc(100% - 1.25vw - 1.25vw);
+            box-sizing: border-box;
+        }
+    }
+
+    .profile-container {
+        display: flex;
+
+        padding: app.$vh-17px 1.25vw;
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 0.7812vw;
+    
+            width: 100%;
+
+            padding: app.$vh-15px 0.7291vw;
+    
+            cursor: pointer;
+    
+            border: none;
+            border-radius: app.$vh-12px;
+    
+            background-color: app.alpha(var(--color-text), 0.03);
+            box-shadow: app.$glass-box-shadow;
+    
+            .avatar {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+    
+                position: relative;
+    
+                width: 5.5555vh;
+                height: 5.5555vh;
+    
+                overflow: hidden;
+    
+                border: app.$vh-1px solid var(--color-border-strong);
+                border-radius: 50%;
+                background: var(--color-surface-elevated);
+            }
+    
+            .info {
+                display: flex;
+                flex-direction: column;
+    
+                font-size: app.$vh-16px;
+                font-weight: 700;
+                color: var(--color-text);
+    
+                white-space: nowrap;
+            }
+            
+            &:hover {
+                background: app.alpha(var(--color-text), 0.05);
+            }
+
+            &.active {
+                background: #ef6606;
+            }
+        }
+        
+        &.hidden {
+            justify-content: center;
+
+            .profile {
+                align-items: center;
+    
+                .avatar {
+                    width: 4.6296vh;
+                    height: 4.6296vh;
+                }
+            }
+        }
+    }
+
+
+    &.closed .content .header-container {
+        .header {
+            pointer-events: none;
+        }
+
+        .hidden-header {
+            pointer-events: all;
+        }
+    }
+}
+

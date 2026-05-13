@@ -1,0 +1,85 @@
+@use "../../../App.scss" as app;
+
+.category {
+    display: flex;
+    align-items: center;
+    gap: 0.7812vw;
+
+    padding: app.$vh-14px 0.7812vw;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    border: app.$vh-1px solid transparent;
+    border-radius: app.$vh-12px;
+    
+    background-color: app.alpha(var(--color-text), 0.03);
+    box-shadow: app.$glass-box-shadow;
+
+    .icon {
+        height: app.$vh-24px;
+        width: app.$vh-24px;
+        min-height: app.$vh-24px;
+        min-width: app.$vh-24px;
+
+        fill: app.alpha(var(--color-text), 0.6);
+    }                
+
+    .name {
+        font-size: app.$vh-18px;
+        font-weight: 600;
+        color: app.alpha(var(--color-text), 0.6);
+
+        line-height: 1;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    &:hover {
+        background: app.alpha(var(--color-text), 0.1);
+
+        .icon {
+            fill: app.$orange-500;
+        }
+
+        .name {
+            color: app.$orange-500;
+        }
+    }
+        
+    &.active-filled {
+        background: linear-gradient(to right, app.$orange-500, #ef6606);
+        box-shadow: 0 app.$vh-4px app.$vh-12px app.alpha(app.$orange-500, 0.3);
+
+        .icon {
+            fill: var(--color-text);
+        }
+
+        .name {
+            color: var(--color-text);
+        }
+    }
+
+
+    &.active-stroke {
+        border-color: app.$orange-500;
+        box-shadow: none;
+
+        .icon {
+            fill: app.$orange-500;
+        }
+
+        .name {
+            color: app.$orange-500;
+        }
+    }
+
+    &.closed {
+        width: fit-content;
+
+        .name {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,146 @@
+@use "../../../App.scss" as app;
+
+.statistics-card {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+
+    padding: app.$vh-20px;
+
+    border: none;
+    border-radius: app.$vh-22px;
+
+    background-color: app.alpha(var(--color-text), 0.01);
+    box-shadow: app.$glass-box-shadow;
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        gap: app.$vh-13px;
+
+        .icon-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 3.3333vh;
+            height: 3.3333vh;
+
+            border-radius: app.$vh-10px;
+            background: #DF610A;
+
+            .icon {
+                height: app.$vh-16px;
+
+                fill: var(--color-text);
+            }
+
+            &.green {
+                background: app.$orange-500;
+            }
+
+            &.blue  {
+                background: app.$blue-500;
+            }
+
+            &.yellow {
+                background: app.$yellow-500;
+            }
+        }
+
+        .text {
+            display: flex;
+            flex-direction: column;
+            gap: app.$vh-6px;
+            
+            .title {
+                font-size: clamp(18px, 22px, 26px);
+                font-weight: 800;
+                color: var(--color-text);
+            }
+
+            .digit-container {
+                height: clamp(18px, 22px, 26px);
+                line-height: clamp(18px, 22px, 26px);
+            }
+
+            .digit-number {
+                height: clamp(18px, 22px, 26px);
+            }
+
+            .description {
+                display: flex;
+                flex-direction: column;
+
+                font-size: app.$vh-10px;
+                font-weight: 600;
+                color: var(--color-text-muted);
+            }
+        }
+    }
+
+    .profit {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.1041vw;
+
+        padding: app.$vh-5px 0.2604vw;
+
+        min-width: 2.7083vw;
+        height: fit-content;
+
+        border-radius: app.$vh-6px;
+
+        .icon {
+            height: app.$vh-10px;
+        }
+
+        .value {
+            gap: 0;
+
+            font-size: clamp(6px, 10px, 14px);
+            font-weight: 700;
+        }
+
+        .digit-container {
+            height: clamp(6px, 10px, 14px);
+            line-height: clamp(6px, 10px, 14px);
+        }
+
+        .digit-number {
+            height: clamp(6px, 10px, 14px);
+        }
+
+        &.up {
+            color: app.$green-500;
+
+            background: app.alpha(app.$green-500, 0.1);
+
+            .icon {
+                fill: app.$green-500;
+            }
+
+            .value,
+            .digit-number { 
+                color: app.$green-500;
+            }
+        }
+
+        &.down {
+            color: app.$red-700;
+
+            background: app.alpha(app.$red-700, 0.1);
+
+            .icon {
+                fill: app.$red-700;
+            }
+
+            .value,
+            .digit-number { 
+                color: app.$red-700;
+            }
+        }
+    }
+}

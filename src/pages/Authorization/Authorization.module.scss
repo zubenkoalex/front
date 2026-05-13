@@ -1,0 +1,314 @@
+@use "../../App.scss" as app;
+
+.spinner-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+    width: 100%;
+    
+    .spinner {
+        width: 4.6296vh;
+        height: 4.6296vh;
+
+        border: app.$vh-4px solid app.$orange-500;
+        border-bottom-color: transparent;
+    }
+}
+
+.authorization {
+    position: relative;
+
+    height: 100vh;
+    overflow: hidden;
+    
+    .blobs {
+        position: absolute;
+        inset: 0;
+
+        opacity: 0.4;
+
+        .blob {    
+            height: 35.5555vh;
+            width: 35.5555vh;
+        
+            mix-blend-mode: multiply;
+            filter: blur(11.8518vh);
+            
+            animation-duration: 7s;
+        
+            &.top-left {
+                top: 0;
+                left: -0.8333vw;
+            }
+        
+            &.top-right {
+                top: 0;
+                right: 0.8333vw;
+            }
+
+            &.bottom-left {
+                bottom: -2.9629vh;
+                left: 4.1666vw;
+            }
+
+            &.bottom-right {
+                bottom: -2.9629vh;
+                right: 4.1666vw;
+            }
+
+            &:nth-child(2),
+            &:nth-child(4) {
+                height: 27.7777vh;
+                width: 27.7777vh;
+            }
+        }
+    }
+
+    .floating-icons {
+        position: absolute;
+
+        .icon {
+            width: 2.9629vh;
+            height: 2.9629vh;
+
+            fill: app.alpha(app.$orange-500, 0.2)
+        }
+    }
+
+    .content {
+        display: grid;
+        align-items: center;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.6666vw;
+
+        position: relative;
+        z-index: 10;
+
+        width: 100%;
+        height: 100%;
+        max-width: 62.5vw;
+
+        margin: 0 auto;
+
+        .branding {
+            display: flex;
+            flex-direction: column;
+            gap: app.$vh-24px;
+
+            .back-button {
+                display: flex;
+                align-items: center;
+                gap: 0.4166vw;
+                width: fit-content;
+
+                padding: 0;
+                margin-bottom: app.$vh-8px;
+                
+                color: app.$gray-400;
+
+                border: none;
+                background: transparent;
+
+                .icon {
+                    height: app.$vh-16px;
+                    width: app.$vh-16px;
+
+                    fill: app.$gray-400;
+
+                    transform: rotate(180deg);
+                    transition: all 0.3s;
+                }
+
+                &:hover {
+                    color: app.$orange-400;
+
+                    .icon {
+                        fill: app.$orange-400;
+                        transform: translateX(-0.25rem);
+                    }
+                }
+            }
+
+            .logotype {
+                display: flex;
+                align-items: center;
+                gap: 0.7812vw;
+
+                margin-bottom: app.$vh-8px;
+
+                .icon-container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    height: 5.9259vh;
+                    width: 5.9259vh;
+
+                    border-radius: app.$vh-12px;
+                    background: linear-gradient(to bottom right, app.$orange-500, app.$orange-700);
+                    box-shadow: 0 app.$vh-20px 4.6296vh calc(-1 * app.$vh-12px) app.alpha(app.$orange-500, 0.3); 
+
+                    .icon {
+                        width: 3.3333vh;
+                        height: 3.3333vh;
+
+                        fill: var(--color-text);
+                    }
+                }
+
+                .name {
+                    font-size: 2.7777vh;
+                    font-weight: 700;
+                    color: var(--color-text);
+                }
+            }
+
+            .title {
+                display: flex;
+                flex-direction: column;
+
+                font-size: 5.5555vh;
+                font-weight: 700;
+                color: var(--color-text);
+
+                line-height: 1.2;
+
+                .gradient {
+                    color: transparent;
+
+                    background: linear-gradient(to right, app.$orange-400, app.$orange-500, app.$pink-500);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                }
+            }
+
+            .description {
+                max-width: 23.4375vw;
+                
+                font-size: app.$vh-18px;
+                font-weight: 600;
+                color: app.$gray-400;
+
+                line-height: 1.75;
+            }
+        }
+
+        .form-container {
+            transition: height 0.3s ease;
+
+            .form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 2.9629vh;
+    
+                position: relative;
+    
+                padding: 4.4444vh;
+    
+                border-radius: 2.9629vh; 
+                border: app.$vh-1px solid var(--color-stroke);
+
+                background: var(--color-surface);
+                box-shadow: app.$glass-box-shadow;
+                backdrop-filter: blur(3.7037vh);
+    
+                .toggle-container {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.4166vw;
+    
+                    width: 100%;
+    
+                    padding: app.$vh-4px;
+    
+                    .button {
+                        flex: 1;
+    
+                        padding: 0.75rem;
+                        
+                        font-weight: 700;
+                        color: app.$gray-400;
+                        
+                        cursor: pointer;
+                        
+                        border: none;
+                        border-radius: app.$vh-16px;
+    
+                        background: transparent;
+                        backdrop-filter: none;
+    
+                        transition: all 300ms;
+    
+                        &.active {
+                            color: var(--color-text);
+    
+                            background: linear-gradient(to right, app.$orange-500, app.$orange-700);
+                            box-shadow: 0 app.$vh-4px app.$vh-12px app.alpha(app.$orange-500, 0.3);
+                        }
+    
+                        &:not(.active):hover {
+                            color: app.$orange-500;
+                        }
+                    }
+                }
+    
+                .footer {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.2604vw;
+    
+                    font-size: app.$vh-14px;
+                    font-weight: 500;
+                    color: app.$gray-400;
+    
+                    .button {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.4166vw;
+    
+                        width: fit-content;
+    
+                        padding: 0;
+                        
+                        color: app.$orange-500;
+    
+                        border: none;
+                        background: transparent;
+                        backdrop-filter: none;
+    
+                        &:hover {
+                            color: app.$orange-400;
+                        }
+    
+                        &.back {
+                            color: app.$gray-400;
+    
+                            .icon {
+                                height: app.$vh-16px;
+                                width: app.$vh-16px;
+    
+                                fill: app.$gray-400;
+    
+                                transform: rotate(180deg);
+                                transition: all 0.3s;
+                            }
+    
+                            &:hover {
+                                color: app.$orange-400;
+    
+                                .icon {
+                                    fill: app.$orange-400;
+                                    transform: rotate(180deg), translateX(-0.25rem);    
+                                }
+                            }
+                        }
+    
+                    }
+                }
+            }
+        }
+    }
+}

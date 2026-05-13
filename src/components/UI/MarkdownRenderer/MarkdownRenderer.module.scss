@@ -1,0 +1,116 @@
+@use "../../../App.scss" as app;
+
+.markdown a {
+    text-decoration: none;
+}
+
+.h1 {
+    margin: app.$vh-16px 0;
+
+    font-size: app.$vh-24px;
+    font-weight: 700;
+}
+
+.h2 {
+    margin: app.$vh-14px 0;
+
+    font-size: app.$vh-20px;
+    font-weight: 600;
+}
+
+.h3 {
+    margin: app.$vh-12px 0;
+
+    font-size: app.$vh-18px;
+    font-weight: 600;
+}
+
+.p {
+    margin: app.$vh-8px 0;
+}
+
+.strong {
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.em {
+    font-style: italic;
+}
+
+.del {
+    text-decoration: line-through;
+    color: var(--color-text-muted);
+}
+
+.ul,
+.ol {
+    margin: app.$vh-8px 0;
+    padding-left: 1.0416vw;
+}
+
+.li {
+    margin: app.$vh-4px 0;
+}
+
+
+.inline-code {
+    padding: app.$vh-2px 0.3125vw;
+    border-radius: app.$vh-4px;
+
+    font-family: ui-monospace, monospace;
+    font-size: app.$vh-13px;
+
+    background: #1f2937;
+}
+
+.blockquote {
+    padding-left: 0.625vw;
+    margin: app.$vh-12px 0;
+
+    color: #cbd5f5;
+
+    border-left: app.$vh-3px solid #3b82f6;
+}
+
+.link {
+    color: #60a5fa;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.hr {
+    margin: app.$vh-16px 0;
+
+    height: app.$vh-1px;
+    
+    border: none;
+    background: #374151;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    
+    margin: app.$vh-12px 0;
+
+    border-collapse: collapse;
+}
+
+.th,
+.td {
+    padding: app.$vh-8px;
+    
+    border: app.$vh-1px solid #374151;
+}
+
+.th {
+    font-weight: 600;
+
+    background: #1f2937;
+}

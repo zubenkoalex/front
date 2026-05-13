@@ -1,0 +1,87 @@
+@use "../../../App.scss" as app;
+
+.context-menu {
+    position: absolute;
+
+    padding: app.$vh-10px 0.7812vw;
+
+    border-radius: app.$vh-14px;
+    border: app.$vh-1px solid var(--color-border-strong);
+    background: var(--color-surface-elevated);
+
+    .menu-buttons {
+        display: flex;
+        flex-direction: column;
+
+        .menu-button {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.1979vw;
+
+            padding: app.$vh-8px;
+
+            cursor: pointer;
+
+            border-radius: app.$vh-6px;
+
+            .content {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 0.5208vw;
+
+                .info {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    font-size: app.$vh-14px;
+                    font-weight: 600;
+                    color: var(--color-text);
+                    white-space: nowrap;
+
+                    .description {
+                        font-size: app.$vh-12px;
+                        font-weight: 500;
+                        color: var(--color-text-muted);
+                    }
+                }
+            }
+
+            .icon {
+                height: app.$vh-14px;
+                width: app.$vh-14px;
+
+                fill: var(--color-text);
+
+                &.linked {
+                    height: app.$vh-10px;
+
+                    fill: var(--color-muted-strong);
+                }
+            }
+
+
+            &:hover {
+                background: var(--color-surface);
+            }
+        }
+
+        .line {
+            margin: app.$vh-5px 0;
+
+            height: app.$vh-1px;
+            width: 100%;
+
+            background: app.alpha(var(--color-text), 0.15);
+        }
+    }
+
+    &.subcontext {
+        top: 50%;
+        left: calc(100% + 0.2604vw);
+
+        padding: app.$vh-10px 0.5208vw;
+    }
+}

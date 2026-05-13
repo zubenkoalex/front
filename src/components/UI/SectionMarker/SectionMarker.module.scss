@@ -1,0 +1,32 @@
+@use "../../../App.scss" as app;
+
+.section-marker {
+    display: flex;
+    align-items: center;
+    gap: 0.4166vw;
+
+    width: fit-content;
+
+    padding: app.$vh-8px 0.8333vw;
+
+    font-size: app.$vh-18px;
+    font-weight: 500;
+    color: app.$orange-500;
+
+    border-radius: app.$vh-rounded;
+    border: app.$vh-1px solid app.alpha(app.$orange-500, 0.2);
+    background: linear-gradient(90deg, app.alpha(app.$orange-500, 0.1), app.alpha(app.$pink-500, 0.1));
+    backdrop-filter: blur(app.$vh-4px);
+
+    .icon {
+        height: app.$vh-16px;
+        width: app.$vh-16px;
+
+        fill: app.$orange-500;  
+    }
+
+    &.secondary {
+        border-color: var(--color-stroke);
+        background: var(--color-surface);
+    }
+}

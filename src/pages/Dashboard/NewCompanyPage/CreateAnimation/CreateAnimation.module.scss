@@ -1,0 +1,234 @@
+@use "../../../../App.scss" as app;
+
+.content-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4.6296vh;
+    
+        .progress-window {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: app.$vh-25px;
+        
+            width: fit-content;
+            height: fit-content;
+        
+            min-height: 34.2592vh;
+            min-width: 20.8333vw;
+        
+            border-radius: 5.5555vh;
+            border: app.$vh-1px solid app.$orange-500;
+            background: app.alpha(var(--color-text), 0.01);
+        
+    
+            .progress-container {
+                position: relative;
+    
+                width: 16.6666vh;
+                height: 16.6666vh;
+    
+                .progress {
+                    width: 100%;
+                    height: 100%;
+            
+                    fill: var(--color-border-strong);
+            
+                    path {
+                        transition: fill 0.6s ease;
+                    }
+            
+                    &.step-1 {
+                        path:nth-last-child(1) {
+                            fill: app.$orange-500;
+                        }
+                    }
+            
+                    &.step-2 {
+                        path:nth-last-child(-n + 2) {
+                            fill: app.$orange-500;
+                        }
+                    }
+            
+                    &.step-3 {
+                        path:nth-last-child(-n + 3) {
+                            fill: app.$orange-500;
+                        }
+                    }
+            
+                    &.step-4 {
+                        path:nth-last-child(-n + 4) {
+                            fill: app.$orange-500;
+                        }
+                    }
+            
+                    &.step-5 {
+                        path:nth-last-child(-n + 5) {
+                            fill: app.$orange-500;
+                        }
+                    }
+                }
+            
+                .icon-container {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+
+                    width: 9.2592vh;
+                    height: 9.2592vh;
+
+                    .icon {
+                        width: 100%;
+                        height: 100%;
+            
+                        fill: var(--color-text);
+                    }
+                }
+            }
+    
+    
+            .step {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: app.$vh-12px;
+        
+                font-size: app.$vh-22px;
+                font-weight: 800;
+                color: app.$orange-500;
+        
+                .description {
+                    font-size: app.$vh-15px;
+                    font-weight: 700;
+                    color: var(--color-text-muted);
+                }
+            }
+        }
+    
+        .buttons {
+            display: flex;
+            align-items: center;
+            gap: 1.0416vw;
+    
+            width: 100%;
+            min-height: 4.2592vh;
+    
+            visibility: hidden;
+    
+            .button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.2604vw;
+    
+                padding: app.$vh-15px 1.3020vw;
+    
+                width: 100%;
+    
+                font-size: app.$vh-15px;
+                font-weight: 700;
+                color: var(--color-text);
+    
+                border: app.$vh-1px solid app.alpha(var(--color-text), 0.1);
+                border-radius: app.$vh-12px;
+    
+                background-color: app.alpha(var(--color-text), 0.01);
+                box-shadow: app.$glass-box-shadow;
+    
+                .icon {
+                    height: app.$vh-10px;
+    
+                    fill: var(--color-text);
+                }
+    
+                &:hover .icon  {
+                    transform: translateX(0.2604vw);
+                }
+            }
+    
+            &.visible {
+                visibility: visible;
+            }
+        }
+    
+        &.error {
+            .progress-window {
+                border-color: app.$red-500;
+    
+                .progress-container {
+                    .progress path:nth-last-child(-n + 5) {
+                        fill: app.$red-500;
+                    }
+    
+                    .icon-container {
+                        width: 6.4814vh;
+                        height: 6.4814vh;
+
+                        .icon {
+                            fill: app.$red-500;
+                        }
+                    }
+                }
+    
+                .step {
+                    color: app.$red-500;
+                }
+            }
+    
+            .buttons .button {
+                color: app.$red-500;
+                border-color: app.alpha(app.$red-500, 0.1);
+    
+                .icon {
+                    fill: app.$red-500;
+                }
+            }
+        }
+    
+        &.success {
+            .progress-window {
+                border-color: app.$success-color;
+    
+                .progress-container { 
+                    .progress path:nth-last-child(-n + 5) {
+                        fill: app.$success-color;
+                    }
+    
+                    .icon-container .icon {
+                        fill: app.$success-color;
+                    }
+                }
+    
+                .step {
+                    color: app.$success-color;
+                }
+            }
+    
+            .buttons {
+                width: fit-content;
+
+                .button {
+                    color: app.$success-color;
+                    border-color: app.alpha(app.$success-color, 0.1);
+        
+                    .icon {
+                        fill: app.$success-color;
+                    }
+                }
+            }
+        }
+    }
+}
+

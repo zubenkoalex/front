@@ -1,0 +1,14 @@
+@use "../../../../App.scss" as app;
+
+.image-modal {
+    padding: 0 !important;
+
+    background: transparent !important;
+
+    .image-modal-content {
+        max-height: 74.0740vh;
+        max-width: 52.0833vw;
+
+        border-radius: app.$vh-12px;
+    }
+}

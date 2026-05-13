@@ -1,0 +1,105 @@
+@use "../../../../App.scss" as app;
+
+.modal-container {
+    padding: 4.6296vh;
+}
+
+.themes-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 2.7777vh;
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        gap: app.$vh-8px;
+
+        .title {
+            font-size: app.$vh-20px;
+            font-weight: 700;
+            color: var(--color-text);
+        }
+
+        .description {
+            font-size: app.$vh-16px;
+            font-weight: 700;
+            color: var(--color-text-muted);
+        }
+    }
+
+    .thems {
+        display: flex;
+        flex-direction: column;
+        gap: app.$vh-10px;
+
+        .theme {
+            display: flex;
+            align-items: center;
+            gap: 2.6041vw;
+
+            padding: app.$vh-25px 1.3020vw app.$vh-25px 2.0833vw;
+
+            max-width: 27.6041vw;
+
+            cursor: pointer;
+
+            border: app.$vh-1px solid transparent;
+            border-radius: app.$vh-14px;
+            background: var(--color-surface-soft);
+
+            .icon-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                width: 6.4814vh;
+                height: 6.4814vh;
+
+                .icon {
+                    width: 6.4814vh;
+                    height: 6.4814vh;
+
+                    fill: app.alpha(var(--color-text-muted), 0.75);
+                }
+            }
+
+            .theme-type {
+                display: flex;
+                flex-direction: column;
+                gap: 2.7777vh;
+
+                .theme-header {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.2604vw;
+
+                    font-size: app.$vh-16px;
+                    font-weight: 700;
+                    color: var(--color-text);
+
+                    .selected {
+                        font-size: app.$vh-14px;
+                        font-weight: 600;
+                        color: app.$orange-500;
+                    }
+                }   
+
+                .description {
+                    font-size: app.$vh-12px;
+                    font-weight: 700;
+                    color: var(--color-text-muted);
+                }
+            }
+
+            &.selected {
+                border-color: app.$orange-500;
+
+                .icon-container .icon {
+                    fill: app.$orange-500;
+
+                    filter: drop-shadow(0 0 app.$vh-8px app.alpha(app.$orange-500, 0.5));
+                }
+            }
+        }
+    }
+}

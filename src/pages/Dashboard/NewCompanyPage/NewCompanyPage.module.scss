@@ -1,0 +1,593 @@
+@use "../../../App.scss" as app;
+
+.new-company-page {
+    display: flex;
+
+    position: relative;
+
+    width: 100%;
+
+    padding: 4.6296vh;
+
+
+    .blobs {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+
+        opacity: 0.7;
+
+        .blob {    
+            filter: blur(13.8888vh);
+            
+            animation-duration: 2s;
+        
+            &.top-left {
+                height: 11.5740vh;
+                width: 11.5740vh;
+
+                top: 0;
+                left: 0;
+            }
+        
+            &.bottom-right {
+                height: 10.1851vh;
+                width: 10.1851vh;
+
+                bottom: 0;
+                right: 0;
+                transform: translate(50%, 50%);
+            }
+        }
+    }
+
+    .cones {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+
+        .cone {
+            position: absolute;
+
+            background-image: var(--image);
+            background-size: cover;
+            background-position: center;
+
+            -webkit-mask-image: var(--mask);
+            mask-image: var(--mask);
+
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+
+            -webkit-mask-size: contain;
+            mask-size: contain;
+
+            -webkit-mask-position: center;
+            mask-position: center;
+
+            -webkit-mask-mode: alpha;
+            mask-mode: alpha;
+
+            &::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+
+                background: app.$orange-500;
+                mix-blend-mode: hard-light;
+
+                pointer-events: none;
+            }
+
+            &:nth-child(1) {
+                top: app.$vh-15px;
+                left: 0.5208vw;
+
+                width: 7.4074vh;
+                height: 7.4074vh;
+            }
+
+            &:nth-child(2) {
+                top: app.$vh-15px;
+                right: 0.5208vw;
+
+                width: 9.2592vh;
+                height: 9.2592vh;
+            }
+
+            &:nth-child(3) {
+                bottom: 0;
+                left: 0;
+
+                width: 10.1851vh;
+                height: 10.1851vh;
+            }
+
+            &:nth-child(4) {
+                bottom: app.$vh-15px;
+                right: 0.7812vw;
+
+                width: 6.4814vh;
+                height: 6.4814vh;
+            }
+        }
+    }
+
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        gap: 2.7777vh;
+
+        position: relative;
+
+        width: 100%;
+
+        padding: 4.6296vh;
+
+        border: none;
+        border-radius: app.$vh-18px;
+
+
+        .form-blur-layer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+
+            width: 100%;
+            height: 100%;
+
+            pointer-events: none;
+
+            border-radius: inherit;
+            backdrop-filter: blur(app.$vh-4px);
+            background-color: app.alpha(var(--color-text), 0.01);
+            box-shadow: app.$glass-box-shadow;
+        }
+
+        .steps,
+        .form,
+        .line,
+        .buttons {
+            position: relative;
+            z-index: 1;
+        }
+
+        .steps {
+            display: flex;
+            align-items: center;
+            gap: 0.7812vw;
+
+            .step {
+                position: relative;
+
+                .icon-container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    position: relative;
+
+                    height: 4.6296vh;
+                    width: 4.6296vh;
+
+                    border: none;
+                    border-radius: 50%;
+
+                    background: app.alpha(var(--color-text), 0.05);
+                    box-shadow: app.$glass-box-shadow;
+
+                    .icon {
+                        width: 1.0416vw;
+
+                        fill: var(--color-text-muted);
+                    }
+
+                    .border-svg {
+                        position: absolute;
+                        inset: 0;
+
+                        width: 100%;
+                        height: 100%;
+
+                        .border-rect {
+                            x: 0;
+                            y: 0;
+                            width: 100%;
+                            height: 100%;
+
+                            rx: 50%;
+                            ry: 50%;
+
+                            fill: none;
+                            stroke: app.$orange-500;
+                            stroke-width: 0.1388vh;
+
+                            stroke-dasharray: 18% 17%;
+
+                            stroke-linecap: round;
+                            stroke-linejoin: round;
+
+                        }
+                    }
+                }
+
+                .name {
+                    position: absolute;
+                    left: 50%;
+                    transform: translate(-50%, app.$vh-10px);
+
+                    font-size: app.$vh-10px;
+                    font-weight: 600;
+                    color: var(--color-text-muted);
+
+                    white-space: nowrap;
+                }
+
+                &:nth-last-child(1) .icon-container  {
+                    background: app.alpha(app.$orange-500, 0.05);
+
+                    .icon {
+                        fill: app.$orange-500;
+                    }
+                }
+
+                &.done {
+                    .icon-container {
+                        background-color: app.$orange-500;
+                        box-shadow: 0 0 app.$vh-5px app.alpha(app.$orange-500, 0.35);
+    
+                        .icon {
+                            fill: var(--color-text);
+                        }
+                    }
+
+                    .name {
+                        color: app.$orange-500;
+                    }
+                }
+
+                &.current {
+                    .icon-container {
+                        background-color: app.alpha(var(--color-text), 0.1);
+    
+                        .icon {
+                            fill: var(--color-text);
+                        }
+                    }
+
+                    .name {
+                        color: var(--color-text);
+                    }
+                }
+
+                &:nth-child(1)  {
+                    .icon-container {
+                        background-color: transparent;
+                        box-shadow: 0 0 app.$vh-5px app.alpha(app.$orange-500, 0.35);
+    
+                        .icon {
+                            fill: app.$orange-500;
+                        }
+                    }
+
+                    .name {
+                        color: app.$orange-500;
+                    }
+                }
+            }
+            
+            .progress {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: app.$vh-6px;
+
+                position: relative;
+
+                width: 100%;
+
+                .line {
+                    height: 0.1388vh;
+                    width: 100%;
+    
+                    background: var(--color-border-strong);
+                }
+
+                .value {
+                    position: absolute;
+                    left: 50%;
+                    bottom: 0;
+                    transform: translate(-50%, calc(-1 * app.$vh-6px));
+
+                    font-size: app.$vh-10px;
+                    font-weight: 700;
+                    color: var(--color-text-muted);
+                }
+
+                &.done {
+                    .line {
+                        background-color: app.$orange-500;
+                    }
+
+                    .value {
+                        color: app.$orange-500;;
+                    }
+                }
+            }
+
+
+        }
+        
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 2.7777vh;
+
+            margin-top: 5.5555vh;
+
+            height: 100%;
+
+            .header {
+                display: flex;
+                align-items: center;
+                gap: 1.0416vw;
+
+                .icon-container {
+                    position: relative;
+
+                    height: 6.9444vh;
+                    width: 6.9444vh;
+
+                    .icon {
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+
+                .info {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    height: 100%;
+
+                    .title {
+                        font-size: app.$vh-22px;
+                        font-weight: 800;
+                        color: app.$orange-500;
+                    }
+
+                    .description {
+                        display: flex;
+                        flex-direction: column;
+
+                        font-size: app.$vh-15px;
+                        font-weight: 600;
+                        color: var(--color-text-muted);
+                    }
+                }
+            }
+        }
+
+        .line {
+            height: app.$vh-1px;
+            width: 100%;
+    
+            background: var(--color-border-strong);
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .button {
+                display: flex;
+                align-items: center;
+                gap: 0.2604vw;
+
+                padding: app.$vh-15px 1.3020vw;
+
+                font-size: app.$vh-15px;
+                font-weight: 700;
+
+                border: none;
+                border-radius: app.$vh-12px;
+
+                .icon {
+                    height: app.$vh-10px;
+
+                    &.sparkles {
+                        height: app.$vh-20px;
+                        width: app.$vh-20px;
+                    }
+                }
+
+                &.back {
+                    color: var(--color-text-muted);
+
+                    background: app.alpha(var(--color-surface-soft), 0.50);
+                    box-shadow: app.$glass-box-shadow;
+
+                    .icon {
+                        fill: var(--color-text-muted);
+
+                        rotate: (180deg);
+                    }
+
+                    &:hover {
+                        color: var(--color-text);
+
+                        background: app.alpha(var(--color-surface-elevated), 0.50);
+
+                        .icon {
+                            fill: var(--color-text);
+                        }
+                    }
+                }
+
+                &.next {
+                    color: app.$orange-500;
+
+                    border: app.$vh-1px solid app.$orange-500;
+                    background: transparent;
+
+                    .icon {
+                        fill: app.$orange-500;
+                    }
+
+                    &:hover {
+                        background: app.alpha(app.$orange-500, 0.1);
+                    }
+                }
+
+                &.create {
+                    height: 4.6296vh;
+                    min-width: 11.0416vw;
+
+                    border-radius: app.$vh-rounded;
+                    animation: pulse 2s infinite;
+
+                    .icon {
+                        fill: var(--color-text);
+                    }
+
+                    &:hover .icon:last-child  {
+                        transform: translateX(0.2604vw);
+                    }
+
+                    @keyframes pulse {
+                        0% {
+                        }
+                        50% {
+                            box-shadow: 0 0 0 app.$vh-10px app.alpha(app.$orange-500, 0.2);
+                        }
+                        100% {
+                            box-shadow: 0 0 0 0 app.alpha(app.$orange-500, 0);;
+                        }
+                    }
+                }
+            }
+
+            &:has(> :only-child) {
+                justify-content: flex-end;
+            }
+
+            &:has(> :nth-child(2)) {
+                justify-content: space-between;
+            }
+        }
+    }
+
+    &.animation-finished {
+
+        &.error {
+            .blobs .blob {
+                background: app.$red-500;
+            }
+
+            .cones .cone {
+                &::after {
+                    background: app.$red-500;
+                }
+            }
+
+            .form-container .steps {
+                .step {
+                    .icon-container {
+                        background-color: app.$red-500;
+                        box-shadow: 0 0 app.$vh-5px app.alpha(app.$orange-500, 0.35);
+        
+                        .border-svg .border-rect  {
+                            stroke: app.$red-500;
+                        }
+    
+                        .icon {
+                            fill: #202020;
+                        }
+                    }
+    
+                    .name {
+                        color: app.$red-500;
+                    }
+    
+                    &:nth-child(1)  {
+                        .icon-container {
+                            background-color: transparent;
+                            box-shadow: 0 0 app.$vh-5px app.alpha(app.$red-500, 0.35);
+        
+                            .icon {
+                                fill: app.$red-500;
+                            }
+                        }
+                    }
+                }
+
+                .progress {
+                    .line {
+                        background: app.$red-500;
+                    }
+
+                    .value {
+                        color: app.$red-500;
+                    }
+                }
+            }
+        }
+
+        &.success {
+            .blobs .blob {
+                background: app.$success-gradient;
+            }
+
+            .cones .cone {
+                &::after {
+                    background: app.$success-gradient;
+                }
+            }
+
+            .form-container .steps {
+                .step {
+                    .icon-container {
+                        background: app.$success-color;
+                        box-shadow: 0 0 app.$vh-5px app.alpha(app.$success-color, 0.35);
+        
+                        .border-svg .border-rect  {
+                            stroke: app.$success-color;
+                        }
+    
+                        .icon {
+                            fill: #202020;
+                        }
+                    }
+    
+                    .name {
+                        color: app.$success-color;
+                    }
+    
+                    &:nth-child(1)  {
+                        .icon-container {
+                            background-color: transparent;
+                            box-shadow: 0 0 app.$vh-5px app.alpha(app.$success-color, 0.35);
+        
+                            .icon {
+                                fill: app.$success-color;
+                            }
+                        }
+                    }
+                }
+
+                .progress {
+                    .line {
+                        background: app.$success-gradient;
+                    }
+
+                    .value {
+                        color: app.$success-color;
+                    }
+                }
+            }
+        }
+    }
+}

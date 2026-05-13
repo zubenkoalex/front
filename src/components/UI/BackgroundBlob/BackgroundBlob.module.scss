@@ -1,0 +1,99 @@
+@use "../../../App.scss" as app;
+
+.background-blob {
+    position: absolute;
+    
+    border-radius: 50%;
+
+    &.animation-opacity {
+        animation: blob-opacity 2s infinite;
+    }
+
+    &.animation-scale {
+        animation: blob-scale 2s infinite;
+    }
+
+    &.animation-pulse {
+        animation: blob-pulse 2s ease-in-out infinite;
+    }
+
+    &.animation-pulse-2 {
+        animation: blob-pulse-2 2s ease-in-out infinite;
+    }
+
+    &.orange {
+        background: app.$orange-500;
+    }
+
+    &.pink {
+        background: app.$pink-500;
+    }
+
+    &.purple {
+        background: app.$purple-500;
+    }
+
+    &.blue {
+        background: app.$blue-400;
+    }
+
+    &.delay-1000 {
+        animation-delay: 1s;
+    }
+    
+    &.delay-2000 {
+        animation-delay: 2s;
+    }
+
+    &.delay-3000 {
+        animation-delay: 3s;
+    }
+
+    &.delay-4000 {
+        animation-delay: 4s;
+    }
+}
+
+@keyframes blob-opacity {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@keyframes blob-scale {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes blob-pulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.5;
+    }
+}
+
+@keyframes blob-pulse-2 {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}

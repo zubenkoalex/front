@@ -1,0 +1,50 @@
+@use "../../../App.scss" as app;
+
+.section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: app.$vh-24px;
+
+    text-align: center;
+
+    .title {
+        font-size: 4.4444vh;
+        font-weight: 700;
+        color: var(--color-text);
+
+        .highlighted {
+            position: relative;
+            display: inline-block;
+
+            .text {
+                background: linear-gradient(to right, app.$orange-400, app.$pink-500);
+                background-clip: text;
+                -webkit-background-clip: text;
+                color: transparent;
+            }
+
+            .underline {
+                position: absolute;
+                bottom: app.$vh-5px;
+                left: 0;
+                right: 0;
+
+                height: app.$vh-4px;
+
+                border-radius: app.$vh-rounded;
+                background: linear-gradient(to right, app.$orange-400, app.$pink-500);
+
+                transform-origin: left;
+            }
+        }
+    }
+
+    .description {
+        max-width: 35.4166vw;
+
+        font-size: app.$vh-18px;
+        font-weight: 500;
+        color: app.$gray-400;
+    }
+}

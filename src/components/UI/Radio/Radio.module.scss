@@ -1,0 +1,82 @@
+@use '../../../App.scss' as app;
+
+.radio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5208vw;
+
+    cursor: pointer;
+
+    border-radius: 0.3703vh;
+    transition: all 0.3s ease;
+  
+  
+    &.disabled {
+        opacity: 0.5;
+    }
+
+    .input[type="radio"] {
+        display: none;
+    }
+
+    .custom-radio {
+        display: inline-block;
+
+        height: 1.0416vw;
+        width: 1.0416vw;
+
+        position: relative;
+
+        cursor: pointer;
+
+        border-radius: 50%;
+        border: 0.1851vh solid transparent;
+        background: var(--color-surface-soft);
+    }
+
+    .custom-radio::after {
+        content: '';
+
+        width: 60%;
+        height: 60%;
+        
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+        opacity: 0;
+        
+        border-radius: 50%;
+        background: app.$orange-500;
+        
+        transition: opacity 0.2s;
+    }
+
+    .input[type="radio"]:checked + .custom-radio {
+        border: 0.1851vh solid app.$orange-500;
+    }
+
+    .input[type="radio"]:checked + .custom-radio::after {
+        opacity: 1;
+    }
+}
+  
+.label {
+    font-size: app.$vh-16px;
+    position: relative;
+    color: var(--color-text);
+    user-select: none;
+}
+  
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

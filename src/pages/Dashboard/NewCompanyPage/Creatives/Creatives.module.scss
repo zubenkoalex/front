@@ -1,0 +1,286 @@
+@use "../../../../App.scss" as app;
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2407vh;
+
+    padding: app.$vh-25px;
+
+    height: 100%;
+
+    border: none;
+    border-radius: app.$vh-20px;
+
+    background-color: app.alpha(var(--color-text), 0.01);
+    box-shadow: app.$glass-box-shadow;
+
+    .gerate-container {
+        display: flex;
+        flex-direction: column;
+        gap: app.$vh-5px;
+
+        .label {
+            font-size: app.$vh-13px;
+            font-weight: 700;
+            color: var(--color-text);
+        }
+
+        .input-container {
+            display: flex;
+            align-items: center;
+            gap: 1.3020vw;
+
+        }
+
+        .input {
+            padding: app.$vh-14px 0.7812vw;
+
+            height: 100%;
+            width: -webkit-fill-available;
+
+            font-size: app.$vh-14px;
+            font-weight: 700;
+
+            resize: none;
+            word-wrap: break-word;
+
+            border: none;
+            border-radius: app.$vh-14px;
+
+            background-color: app.alpha(var(--color-text), 0.03);
+            box-shadow: app.$glass-box-shadow;
+        }
+
+        .button {
+            display: flex;
+            align-items: center;
+
+            min-width: 9.375vw;
+            height: 4.1666vh;
+
+            padding: app.$vh-15px 1.5625vw;
+
+            font-size: app.$vh-15px;
+            font-weight: 700;
+            color: var(--color-text);
+
+            border-radius: app.$vh-12px;
+
+            .icon {
+                width: app.$vh-20px;
+                height: app.$vh-20px;
+
+                fill: var(--color-text);
+            }
+        }
+    }
+
+    .creatives-cards {
+        display: flex;
+        flex-direction: column;
+        gap: app.$vh-25px;
+
+        .title {
+            font-size: app.$vh-20px;
+            font-weight: 800;
+            color: var(--color-text);
+        }
+
+        .cards {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: app.$vh-10px;
+
+            .load-card {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: app.$vh-15px;
+
+                width: 13.2812vw;
+                height: 14.3518vh;
+
+                font-size: app.$vh-12px;
+                font-weight: 700;
+                color: var(--color-text-muted);
+
+                cursor: pointer;
+
+                border-radius: app.$vh-16px;
+                border: app.$vh-2px dashed app.alpha(var(--color-text-muted), 0.5);
+                background-color: app.alpha(var(--color-text), 0.01);
+
+                .icon {
+                    width: 2.6041vw;
+
+                    fill: var(--color-text-muted);
+                }
+            }
+
+            .card {
+                display: flex;
+
+                position: relative;
+
+                width: 13.2812vw;
+                height: 14.3518vh;
+
+                cursor: pointer;
+
+                overflow: hidden;
+
+                border-radius: app.$vh-16px;
+                border: app.$vh-2px solid app.alpha(var(--color-text), 0.2);
+                background-color: app.alpha(var(--color-text), 0.03);
+
+                .file-status {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 1;
+
+                    width: 100%;
+                    height: 100%;
+
+                    pointer-events: none;
+
+                    border-radius: inherit;
+                    background: var(--color-overlay);
+                    backdrop-filter: blur(app.$vh-1px);
+                    
+                    .progress {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+
+                        circle {
+                            stroke-width: app.$vh-2px;
+
+                            &:nth-child(1) {
+                                stroke: app.alpha(var(--color-text), 0.25);
+                            }
+
+                            &:nth-child(2) {
+                                stroke: var(--color-text);
+                            }
+                        }
+                    }
+
+                    .icon {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+
+                        width: app.$vh-20px;
+                        height: app.$vh-20px;
+
+                        fill: app.$red-600;
+                    }
+                }
+
+                .background-overlay {
+                    position: absolute;
+                    inset: 0;
+
+                    min-width: 100%;
+                    min-height: 100%;
+
+                    opacity: 0.35;
+                    mix-blend-mode: overlay;
+
+                    border-radius: app.$vh-16px;
+                    background-color: app.$orange-500;
+                }
+
+                .image {
+                    position: relative;
+                    inset: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+
+                    aspect-ratio: 76 / 9;
+                    width: 100%;
+                    height: 100%;
+
+                    object-fit: cover;
+                    object-position: center;
+
+                    border-radius: app.$vh-16px;
+                }
+
+                .status {
+                    position: absolute;
+                    bottom: app.$vh-15px;
+
+                    height: 3.3333vh;
+                    width: 3.3333vh;
+
+                    fill: var(--color-text);
+
+                    filter: drop-shadow(0 0 app.$vh-20px app.alpha(var(--color-text-inverse), 0.8));
+
+                    &.selected {
+                        right: 0.7812vw;
+
+                        fill: app.$orange-500;
+                    }
+                }
+
+                .tooltip {
+                    display: flex;
+
+                    position: absolute;
+                    bottom: app.$vh-15px;
+                    left: 0.7812vw;
+                }
+
+                .tooltip-icon {
+                    height: 3.3333vh;
+                    width: 3.3333vh;
+
+                    fill: #16A2F0;
+                }
+
+                .tooltip-content {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.5208vw;
+
+                    left: 0.7812vw;
+                    bottom: 5.2777vh;
+
+                    border: app.$vh-1px solid #16A2F0;
+                    background: var(--color-modal);
+                }
+
+                .content-icon {
+                    height: app.$vh-16px;
+                    width: app.$vh-16px;
+
+                    fill: #16A2F0;
+                }
+
+                .tooltip-text {
+                    font-size: app.$vh-13px;
+                    font-weight: 700;
+                    color: #16A2F0;
+                }
+
+
+                &.selected {
+                    border-color: app.$orange-500;
+
+                }
+            }
+
+
+            
+        }
+    }
+}

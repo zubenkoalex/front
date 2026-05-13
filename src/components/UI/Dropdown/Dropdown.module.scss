@@ -1,0 +1,279 @@
+@use "../../../App.scss" as app;
+
+.dropdown {
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+
+    width: 100%;
+    min-width: 8.3333vw;
+
+    font-size: app.$vh-15px;
+
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        position: relative;
+
+        padding: app.$vh-8px 1.1458vw app.$vh-8px 0.7812vw;
+
+        font-weight: 600;
+        color: var(--color-text-muted);
+        white-space: nowrap;
+
+        cursor: pointer;
+
+        border: none;
+        border-radius: app.$vh-14px;
+
+        background-color: app.alpha(var(--color-text), 0.03);
+        box-shadow: app.$glass-box-shadow;
+
+        .selected-items-container {
+            display: flex;
+            align-items: flex-end;
+            gap: 0.4166vw;
+            
+            .selected-items {
+                display: flex;
+                align-items: center;
+                gap: 0.4166vw;
+    
+                max-width: 100%;
+    
+                .selected-item {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.4166vw;
+    
+                    padding: app.$vh-7px 0.625vw;
+    
+                    font-size: app.$vh-14px;
+                    font-weight: 700;
+                    color: app.alpha(var(--color-text), 0.8);
+    
+                    border: none;
+                    border-radius: app.$vh-10px;
+    
+                    background-color: app.alpha(var(--color-text), 0.03);
+                    box-shadow: app.$glass-box-shadow;
+    
+                    .icon-container {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+    
+                        width: app.$vh-20px;
+                        height: app.$vh-20px;
+    
+                        .icon {
+                            width: 100%;
+                            height: 100%;
+        
+                            fill: var(--color-text);
+                        }
+                    }
+    
+                    .delete-container {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+    
+                        width: app.$vh-8px;
+                        height: app.$vh-8px;
+    
+                        .icon {
+                            width: 100%;
+                            height: 100%;
+        
+                            fill: var(--color-text-muted);
+                        }
+    
+                        &:hover .icon {
+                            fill: var(--color-text);
+                        }
+                    }
+                }
+            }
+        }
+
+
+        .single-selected {
+            padding: app.$vh-7px 0;
+
+            &.selected-item {
+                color: var(--color-text);
+            }
+        }
+
+        .arrow {
+            height: app.$vh-8px;
+
+            stroke-width: 1.5;
+            stroke: var(--color-text-muted);
+
+            transform: rotate(180deg);
+        }
+
+        &:hover {
+            background-color: app.alpha(var(--color-text), 0.05);
+
+            .arrow {
+                stroke: var(--color-text);
+            }
+        }
+    }    
+
+    .items-container {
+        position: absolute;
+        top: calc(100% + app.$vh-12px);
+        z-index: 1000;
+
+        opacity: 0;
+
+        width: 100%;
+
+        overflow: hidden;
+        pointer-events: none;
+
+        border-radius: app.$vh-12px;
+        background-color: app.alpha(var(--color-text-inverse), 0.2);
+
+        box-shadow: app.$glass-box-shadow;
+        backdrop-filter: blur(app.$vh-6px);
+
+        .items {
+            display: flex;
+            flex-direction: column;
+            
+            width: 100%;
+            max-height: 22.2222vh;
+    
+            overflow-y: auto;
+    
+            border: none;
+            border-radius: app.$vh-12px;
+            
+            &::-webkit-scrollbar {
+                width: 0.1302vw;
+            }
+            &::-webkit-scrollbar-thumb {
+                max-width: 90%;
+                background-color: var(--color-text);
+                border-radius: app.$vh-6px;
+            }
+    
+            .item {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+    
+                padding: app.$vh-15px;
+    
+                font-weight: 700;
+                color: app.alpha(var(--color-text), 0.8);
+    
+                cursor: pointer;
+    
+                .content {
+                    display: flex;
+                    align-items: center;
+                    gap: 1.0416vw;
+
+                    .icon-container {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+    
+                        width: 2.7777vh;
+                        height: 2.7777vh;
+    
+                        .icon {
+                            width: 100%;
+                            height: 100%;
+        
+                            fill: var(--color-text);
+                            fill: var(--color-text);
+                        }
+                    }
+
+                    .info {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+
+                        .description {
+                            font-size: app.$vh-15px;
+                            font-weight: 400;
+                            color: var(--color-text-muted);
+                        }
+                    }
+                }
+
+                .checkbox {
+                    border: none;
+                    border-radius: app.$vh-6px;
+
+                    width: app.$vh-24px;
+                    height: app.$vh-24px;
+
+                    background-color: app.alpha(app.$orange-500, 0.05);
+                    box-shadow: app.$glass-box-shadow;
+                }
+
+                .checkbox-mark {
+                    height: app.$vh-12px;
+                    width: app.$vh-12px;
+                }
+
+                &:nth-child(1) {
+                    border-top-left-radius: app.$vh-12px;
+                    border-top-right-radius: app.$vh-12px;
+                }
+    
+                &:nth-last-child(1) {
+                    border-bottom-left-radius: app.$vh-12px;
+                    border-bottom-right-radius: app.$vh-12px;
+                }
+    
+                &:hover {
+                    background-color: app.alpha(var(--color-text), 0.05);
+                    
+                    .name {
+                        color: var(--color-text);
+                    }
+                }
+
+                &.selected {
+                    color: app.$orange-500;
+
+                    .icon-container .icon {
+                        fill: app.$orange-500;
+                    }
+                }
+            }
+        }
+    }
+
+    &.active {
+        .header {
+            background-color: app.alpha(var(--color-text), 0.05);
+
+            .arrow {
+                stroke: var(--color-text);
+                transform: rotate(0deg);
+            }
+        }
+
+        .items-container {
+            z-index: 1;
+
+            opacity: 1;
+
+            pointer-events: auto;
+        }
+    }
+}

@@ -1,0 +1,63 @@
+@use "../../../App.scss" as app;
+
+.header {
+    position: fixed; 
+    top: 0;
+    z-index: 40;
+
+    width: 100%;
+
+    border-bottom: app.$vh-1px solid var(--color-surface);
+    background: app.alpha(var(--color-text-inverse), 0.2);
+    backdrop-filter: blur(app.$vh-24px);
+
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+
+    .container {
+        max-width: 66.6666vw;
+        margin: 0 auto;
+        padding: 0 0.8333vw;
+
+        .inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            height: 7.4074vh;
+
+            .logotype {
+                display: flex;
+                align-items: center;
+                gap: 0.4166vw;
+
+                .icon-container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    height: 2.9629vh;
+                    width: 2.9629vh;
+
+                    border-radius: app.$vh-8px;
+                    background: linear-gradient(to bottom right, app.$orange-500, app.$orange-700);
+                    box-shadow: 0 app.$vh-10px app.$vh-20px app.alpha(app.$orange-500, 0.2); 
+
+                    .icon {
+                        width: app.$vh-20px;
+                        height: app.$vh-20px;
+
+                        fill: var(--color-text);
+                    }
+                }
+
+                .name {
+                    font-size: app.$vh-18px;
+                    font-weight: 600;
+                    color: var(--color-text);
+                }
+            }
+        }
+
+    }
+
+}

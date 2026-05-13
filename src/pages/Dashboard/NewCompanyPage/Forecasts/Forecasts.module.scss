@@ -1,0 +1,698 @@
+@use "../../../../App.scss" as app;
+
+
+.content {
+    display: flex;
+    gap: 1.3020vw;
+
+    padding: app.$vh-25px;
+
+    height: 100%;
+    max-height: 43.5185vh;
+
+    overflow: hidden;
+
+    border: none;
+    border-radius: app.$vh-20px;
+
+    background-color: app.alpha(var(--color-text), 0.01);
+    box-shadow: app.$glass-box-shadow;
+
+    .spinner-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 100%;
+        width: 100%;
+
+        .spinner {
+            width: 3.2407vh;
+            height: 3.2407vh;
+
+            border: app.$vh-3px solid app.$orange-500;
+            border-bottom-color: transparent;
+        }
+    }
+
+    .platforms {
+        display: flex;
+        flex-direction: column;
+        gap: app.$vh-12px;
+
+        padding-right: 0.625vw;
+
+        width: 100%;
+        max-width: fit-content;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        &::-webkit-scrollbar {
+            width: 0.1562vw;
+
+            border-radius: app.$vh-6px;
+            background-color: app.alpha(var(--color-text), 0.05);
+        }
+
+        &::-webkit-scrollbar-thumb {
+            width: 0.1562vw;
+
+            border-radius: app.$vh-6px;
+            background-color: app.$orange-500;
+        }
+
+        .platform {
+            display: flex;
+            flex-direction: column;
+            gap: app.$vh-10px;
+
+            min-width: fit-content;
+
+            padding: app.$vh-15px;
+
+            cursor: pointer;
+
+            border: app.$vh-1px solid transparent;
+            border-radius: app.$vh-12px;
+
+            background-color: app.alpha(var(--color-text), 0.01);
+            box-shadow: app.$glass-box-shadow;
+
+            .platform-content {
+                display: flex;
+                align-items: center;
+                gap: 0.5208vw;
+
+                .icon-wrapper {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    width: 3.7037vh;
+                    height: 3.7037vh;
+
+                    border-radius: app.$vh-12px;
+                    background: var(--color-text);
+
+                    .icon {
+                        height: app.$vh-17px;
+                    }
+
+                    &.vk {
+                        background: #0077FF;
+                    }
+
+                    &.yandex-direct .icon {
+                        width: 100%;
+                        height: 100%;
+
+                        border-radius: app.$vh-12px;
+                    }
+                }
+
+                .platform-header {
+                    display: flex;
+                    flex-direction: column;
+                    gap: app.$vh-5px;
+
+                    .title {
+                        display: flex;
+                        gap: 0.4166vw;
+
+                        font-size: app.$vh-14px;
+                        font-weight: 700;
+                        color: var(--color-text);
+
+                        .status {
+                            padding: app.$vh-4px 0.5208vw;
+
+                            font-size: app.$vh-10px;
+                            font-weight: 700;
+                            color: app.$orange-500;
+
+                            border-radius: app.$vh-4px;
+                            background: app.alpha(app.$orange-500, 0.1);
+                        }
+                    }
+
+                    .description {
+                        font-size: app.$vh-13px;
+                        font-weight: 700;
+                        color: app.alpha(var(--color-text), 0.7);
+
+                        white-space: nowrap;
+                    }
+                }
+            }
+
+            .statistics {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 0.7812vw;
+
+                .statistic {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    gap: app.$vh-6px;
+
+                    .key {
+                        font-size: app.$vh-10px;
+                        font-weight: 600;
+                        color: app.alpha(var(--color-text), 0.35);
+                    }
+
+                    .value {
+                        font-size: app.$vh-15px;
+                        font-weight: 700;
+                        color: var(--color-text);
+
+                        white-space: nowrap;
+                    }
+
+                    &.shows .value {
+                        color: app.$orange-600;
+                    }
+
+                    &.clicks .value {
+                        color: app.$blue-500;
+                    }
+
+                    &.ctr .value {
+                        color: app.$green-500;
+                    }
+
+                    &.conversions .value {
+                        color: app.$yellow-500;
+                    }
+                }
+            }
+
+            &.selected {
+                border-color: app.$orange-500;
+                box-shadow: none;
+
+                .platform-header .title,
+                .platform-header .description {
+                    color: app.$orange-500;
+                }
+            }
+        }
+    }
+
+    .forecast {
+        display: flex;
+        flex-direction: column;
+        gap: app.$vh-25px;
+
+        padding: app.$vh-25px;
+
+        width: 100%;
+
+        overflow: hidden;
+
+        border-radius: app.$vh-12px;
+
+        background-color: app.alpha(var(--color-text), 0.01);
+        box-shadow: app.$glass-box-shadow;
+
+        .forecast-header {
+            display: flex;
+            align-items: center;
+            gap: 0.7812vw;
+
+            font-size: app.$vh-20px;
+            font-weight: 800;
+            color: var(--color-text);
+
+            .icon-wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                width: 3.7037vh;
+                height: 3.7037vh;
+
+                border-radius: app.$vh-12px;
+                background: var(--color-text);
+
+                .icon {
+                    height: app.$vh-17px;
+                }
+
+                &.vk {
+                    background: #0077FF;
+                }
+
+                &.yandex-direct .icon {
+                    width: 100%;
+                    height: 100%;
+
+                    border-radius: app.$vh-12px;
+                }
+            }
+        }
+
+        .forecast-content {
+            display: flex;
+            flex-direction: column;
+            gap: app.$vh-20px;
+
+            padding-right: 0.5208vw;
+
+            width: 100%;
+
+            overflow-y: auto;
+            overflow-x: hidden;
+
+            &::-webkit-scrollbar {
+                width: 0.1562vw;
+
+                border-radius: app.$vh-6px;
+                background-color: app.alpha(var(--color-text), 0.05);
+            }
+    
+            &::-webkit-scrollbar-thumb {
+                width: 0.1562vw;
+
+                border-radius: app.$vh-6px;
+                background-color: app.$orange-500;
+            }
+
+            .company-info {
+                display: flex;
+                flex-direction: column;
+                gap: app.$vh-10px;
+
+                .title {
+                    font-size: app.$vh-14px;
+                    font-weight: 700;
+                    color: var(--color-text);
+                }
+                
+                .description {
+                    font-size: app.$vh-13px;
+                    font-weight: 600;
+                    color: var(--color-text-muted);
+                }
+            }
+
+            .forecast-title {
+                font-size: app.$vh-14px;
+                font-weight: 700;
+                color: app.$orange-500;
+            }
+
+            .strategies {
+                display: flex;
+                flex-direction: column;
+                gap: 3.7037vh;
+
+                .strategy {
+                    display: flex;
+                    flex-direction: column;
+                    gap: app.$vh-20px;
+
+                    padding: app.$vh-15px;
+
+                    cursor: pointer;
+
+                    border: app.$vh-1px solid transparent;
+                    border-radius: app.$vh-12px;
+
+                    background-color: app.alpha(var(--color-text), 0.01);
+                    box-shadow: app.$glass-box-shadow;
+
+                    .strategy-header {
+                        display: flex;
+                        align-items: flex-start;
+                        justify-content: space-between;
+
+                        .info {
+                            display: flex;
+                            flex-direction: column;
+                            gap: app.$vh-5px;
+    
+                            .title {
+                                display: flex;
+                                gap: 0.4166vw;
+
+                                position: relative;
+
+                                font-size: app.$vh-14px;
+                                font-weight: 700;
+                                color: var(--color-text);
+                                text-transform: uppercase;
+
+                                .tooltip {
+                                    display: flex;
+                                    align-items: center;
+                                }
+
+                                .tooltip-icon {
+                                    height: app.$vh-15px;
+                                    width: app.$vh-15px;
+
+                                    fill: #16A2F0;
+                                }
+
+                                .tooltip-content {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 0.5208vw;
+
+                                    left: 0;
+                                    bottom: calc(100% + 10px);
+
+                                    border: app.$vh-1px solid #16A2F0;
+                                    background: var(--color-modal);
+                                }
+
+                                .content-icon {
+                                    height: app.$vh-12px;
+                                    width: app.$vh-12px;
+
+                                    fill: #16A2F0;
+                                }
+
+                                .tooltip-text {
+                                    font-size: app.$vh-10px;
+                                    font-weight: 700;
+                                    color: #16A2F0;
+
+                                    text-transform: none;
+                                    white-space: nowrap;
+                                }
+                            }
+
+                            
+    
+                            .description {
+                                font-size: app.$vh-12px;
+                                font-weight: 600;
+                                color: var(--color-text-muted);
+                            }
+                        }
+                        
+                        .statuses {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: flex-end;
+                            gap: app.$vh-5px;
+
+                            .recommended {
+                                font-size: app.$vh-11px;
+                                font-weight: 700;
+                                color: app.$blue-500;
+
+                                visibility: hidden;
+
+                                &.visible {
+                                    visibility: visible;
+                                }
+                            }
+
+                            .selected {
+                                display: flex;
+                                align-items: center;
+                                gap: 0.2604vw;
+
+                                width: fit-content;
+
+                                padding: app.$vh-5px;
+
+                                font-size: app.$vh-11px;
+                                font-weight: 700;
+                                color: var(--color-text);
+
+                                visibility: hidden;
+
+                                border-radius: app.$vh-6px;
+                                background: app.alpha(var(--color-text), 0.1);
+
+                                .icon {
+                                    height: app.$vh-12px;
+                                    width: app.$vh-12px;
+
+                                    fill: var(--color-text);
+                                }
+                            }
+                        }
+                    }
+
+                    .line {
+                        height: app.$vh-1px;
+                        width: 100%;
+
+                        background: var(--color-border-strong);
+                    }
+
+                    .values {
+                        display: flex;
+                        flex-direction: column;
+                        gap: app.$vh-15px;
+
+                        .title {
+                            display: flex;
+                            align-items: center;
+                            gap: 0.2604vw;
+
+                            font-size: app.$vh-14px;
+                            font-weight: 700;
+                            color: var(--color-text);
+
+                            .icon {
+                                width: app.$vh-15px;
+                                height: app.$vh-15px;
+
+                                fill: var(--color-text);
+                            }
+                        }
+
+                        .cards {
+                            display: flex;
+                            align-items: center;
+                            gap: 0.5208vw;
+
+                            .card {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+
+                                padding: app.$vh-15px 0.5208vw;
+
+                                width: 100%;
+
+                                border-radius: app.$vh-14px;
+                                background-color: app.alpha(var(--color-text), 0.01);
+                                box-shadow: app.$glass-box-shadow;
+
+                                .icon-wrapper {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+    
+                                    width: 2.7777vh;
+                                    height: 2.7777vh;
+    
+                                    border-radius: app.$vh-8px;
+                                    border: app.$vh-1px solid var(--color-text);
+                                    background: app.alpha(var(--color-text), 0.1);
+    
+                                    .icon {
+                                        width: app.$vh-12px;
+    
+                                        fill: var(--color-text);
+                                    }
+                                }
+
+                                .card-content {
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: flex-end;
+    
+                                    .value {
+                                        font-size: app.$vh-14px;
+                                        font-weight: 800;
+                                        color: var(--color-text);
+                                    }
+    
+                                    .key {
+                                        font-size: app.$vh-11px;
+                                        font-weight: 600;
+                                        color: var(--color-text-muted);
+                                    }
+                                }
+
+                                &.shows {
+                                    .icon-wrapper {
+                                        border: app.$vh-1px solid app.$orange-600;
+                                        background-color: app.alpha(app.$orange-600, 0.1);
+    
+                                        .icon {
+                                            fill: app.$orange-600;
+                                        }
+                                    }
+
+                                    .card-content .value {
+                                        color: app.$orange-600;
+                                    }
+                                }
+
+                                &.clicks {
+                                    .icon-wrapper {
+                                        border: app.$vh-1px solid app.$blue-500;
+                                        background-color: app.alpha(app.$blue-500, 0.1);
+    
+                                        .icon {
+                                            fill: app.$blue-500;
+                                        }
+                                    }
+
+                                    .card-content .value {
+                                        color: app.$blue-500;
+                                    }
+                                }
+
+                                &.ctr {
+                                    .icon-wrapper {
+                                        border: app.$vh-1px solid app.$green-500;
+                                        background-color: app.alpha(app.$green-500, 0.1);
+    
+                                        .icon {
+                                            fill: app.$green-500;
+                                        }
+                                    }
+
+                                    .card-content .value {
+                                        color: app.$green-500;
+                                    }
+                                }
+
+                                &.conversions {
+                                    .icon-wrapper {
+                                        border: app.$vh-1px solid app.$yellow-500;
+                                        background-color: app.alpha(app.$yellow-500, 0.1);
+    
+                                        .icon {
+                                            fill: app.$yellow-500;
+                                        }
+                                    }
+
+                                    .card-content .value {
+                                        color: app.$yellow-500;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.cpm {
+                        background: app.alpha(app.$orange-600, 0.01);
+
+                        .strategy-header .info .title,
+                        .strategy-header .statuses .selected,
+                        .values .title {
+                            color: app.$orange-600;
+                        }
+
+                        .strategy-header .statuses .selected .icon,
+                        .values .title .icon {
+                            fill: app.$orange-600;
+                        }
+
+                        .strategy-header .statuses .selected {
+                            background: app.alpha(app.$orange-600, 0.1);
+                        }
+                    }
+
+                    &.cpc {
+                        background: app.alpha(app.$blue-500, 0.01);
+
+                        .strategy-header .info .title,
+                        .strategy-header .statuses .selected,
+                        .values .title {
+                            color: app.$blue-500;
+                        }
+
+                        .strategy-header .statuses .selected .icon,
+                        .values .title .icon {
+                            fill: app.$blue-500;
+                        }
+
+                        .strategy-header .statuses .selected {
+                            background: app.alpha(app.$blue-500, 0.1);
+                        }
+                    }
+
+                    &.cpa {
+                        background: app.alpha(app.$yellow-500, 0.01);
+
+                        .strategy-header .info .title,
+                        .strategy-header .statuses .selected,
+                        .values .title {
+                            color: app.$yellow-500;
+                        }
+
+                        .strategy-header .statuses .selected .icon,
+                        .values .title .icon {
+                            fill: app.$yellow-500;
+                        }
+
+                        .strategy-header .statuses .selected {
+                            background: app.alpha(app.$yellow-500, 0.1);
+                        }
+                    }
+
+                    &.selected {
+                        box-shadow: none;
+
+                        &.cpm {
+                            border-color: app.$orange-600;
+                        }
+
+                        &.cpc {
+                            border-color: app.$blue-500;
+                        }
+
+                        &.cpa {
+                            border-color: app.$yellow-500;
+                        }
+
+                        .strategy-header .statuses .selected {
+                            visibility: visible;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .no-platfrom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2.7777vh;
+
+        width: 100%;
+
+        font-size: app.$vh-20px;
+        font-weight: 600;
+        color: app.alpha(var(--color-text), 0.25);
+
+        border-radius: app.$vh-12px;
+
+        background-color: app.alpha(var(--color-text), 0.01);
+        box-shadow: app.$glass-box-shadow;
+
+        .icon {
+            width: 13.8888vh;
+            height: 13.8888vh;
+
+            fill: app.alpha(var(--color-text), 0.25);
+        }
+    }
+}

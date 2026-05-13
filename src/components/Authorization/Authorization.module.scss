@@ -1,0 +1,223 @@
+@use "../../App.scss" as app;
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: app.$vh-24px;
+
+    position: relative;
+
+    width: 100%;
+
+    .feedback {
+        font-size: app.$vh-15px;
+    }
+
+    .success {
+        color: app.$green-500;
+    }
+
+    .error {
+        color: app.$red-500;
+    }
+
+    .inputs {
+        display: flex;
+        flex-direction: column;
+        gap: app.$vh-20px;
+        
+        width: 100%;
+    }
+
+    .options {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        width: 100%;
+
+        padding: 0 0.5208vw;
+
+        .checkbox-container {
+            gap: 0.5208vw;
+
+            .checkbox {
+                height: app.$vh-20px;
+                width: app.$vh-20px;
+            }
+
+            .checkmark {
+                height: app.$vh-12px;
+                width: app.$vh-12px;
+            }
+        }
+
+        .forgot-button {
+            display: flex;
+            align-items: center;
+            gap: 0.4166vw;
+            width: fit-content;
+
+            padding: 0;
+            margin-bottom: app.$vh-8px;
+            
+            color: app.$orange-500;
+
+            border: none;
+            background: transparent;
+            backdrop-filter: none;
+
+            &:hover {
+                color: app.$orange-400;
+            }
+        }
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: app.$vh-8px;
+
+        margin-bottom: app.$vh-24px;
+
+        .icon-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: app.$vh-16px;
+
+            height: 5.9259vh;
+            width: 5.9259vh;
+
+            border-radius: 50%;
+            border: app.$vh-3px solid var(--color-stroke);
+            background: linear-gradient(to bottom right, app.alpha(app.$orange-500, 0.2), app.alpha(app.$pink-500, 0.2));
+
+            .icon {
+                height: 2.9629vh;
+                width: 2.9629vh;
+
+                fill: app.$orange-400;
+            }
+        }
+
+        .title {
+            font-size: app.$vh-24px;
+            font-weight: 700;
+            color: var(--color-text);
+        }
+
+        .description {
+            display: flex;
+            flex-direction: column;
+            gap: app.$vh-10px;
+
+            font-size: app.$vh-16px;
+            font-weight: 600;
+            color: app.$gray-400;
+
+            text-align: center;
+
+            .value {
+                color: app.$orange-400;
+            }
+        }
+    }
+
+    .receive-letter {
+        margin: app.$vh-10px 0;
+
+        font-size: app.$vh-16px;
+        color: app.$orange-400;
+
+        text-decoration: underline;
+        cursor: pointer;
+
+        &.disabled {
+            color: app.$gray-400;
+
+            pointer-events: none;
+        }
+    }
+
+    .action-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        width: 100%;
+
+        .content {
+            gap: 0.5208vw;
+        }
+
+        .icon {
+            height: app.$vh-16px;
+            width: app.$vh-16px;
+
+            fill: var(--color-text);
+        }
+
+        &:hover .icon {
+            transform: translateX(0.2604vw);
+        }
+    }
+
+    .line {
+        width: 75%;
+        height: app.$vh-1px;
+
+        margin: 0 auto;
+
+        background: var(--color-surface-hover);
+    }
+
+    .other-logins {
+        display: flex;
+        flex-direction: column;
+        gap: app.$vh-24px;
+
+        width: 100%;
+
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+
+            padding: app.$vh-16px 1.6666vw;
+            box-shadow: app.$glass-box-shadow;
+            .icon {
+                height: app.$vh-24px;
+                width: app.$vh-24px;
+
+                fill: var(--color-text);
+
+                &.google {
+                    path:nth-child(1) {
+                        fill: #FFC107;
+                    }
+
+                    path:nth-child(2) {
+                        fill: #FF3D00;
+                    }
+
+                    path:nth-child(3) {
+                        fill: #4CAF50;
+                    }
+
+                    path:nth-child(4) {
+                        fill: #1976D2;
+                    }
+            }
+            }
+
+            &:hover {
+                border-color: var(--color-stroke);
+            }
+        }
+    }
+}

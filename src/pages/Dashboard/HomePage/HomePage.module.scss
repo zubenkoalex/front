@@ -1,0 +1,90 @@
+@use "../../../App.scss" as app;
+
+.home-page {
+    display: flex;
+    flex-direction: column;
+    gap: app.$vh-16px;
+
+    width: 100%;
+
+    padding: 4.6296vh 5.2083vw;
+
+    .statistics-cards {
+        display: flex;
+        align-items: center;
+        gap: 0.7812vw;
+
+        width: 100%;
+    }
+
+    .graphs {
+        display: flex;
+        align-items: center;
+        gap: 0.7812vw;
+
+        width: 100%;
+    }
+
+    .last-companies {
+        display: flex;
+        flex-direction: column;
+        gap: app.$vh-25px;
+
+        padding: app.$vh-20px;
+        
+        border: none;
+        border-radius: app.$vh-20px;
+
+        background-color: app.alpha(var(--color-text), 0.01);
+        box-shadow: app.$glass-box-shadow;
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .title {
+                font-size: app.$vh-14px;
+                font-weight: 700;
+                color: var(--color-text);
+            }
+
+            .button {
+                display: flex;
+                align-items: center;
+                gap: 0.2604vw;
+
+                font-size: app.$vh-13px;
+                font-weight: 700;
+                color: app.$orange-500;
+
+                padding: 0;
+                border: 0;
+                background: transparent;
+
+                .icon {
+                    height: app.$vh-12px;
+                    width: app.$vh-12px;
+
+                    fill: app.$orange-500;
+                }
+
+                &:hover {
+                    color: app.$orange-400;
+
+                    .icon {
+                        fill: app.$orange-400;
+
+                        transform: translateX(0.1562vw);
+                    }
+                }
+            }
+        }
+
+        .companies {
+            display: flex;
+            flex-direction: column;
+            gap: app.$vh-12px;
+        }
+    }
+}

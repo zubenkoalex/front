@@ -1,0 +1,175 @@
+@use "../../../App.scss" as app;
+
+.plan {
+    display: flex;
+    flex-direction: column;
+    gap: app.$vh-15px;
+
+    padding: 3.2407vh 1.3020vw;
+
+    height: 100%;
+    width: 100%;
+    
+    box-sizing: border-box;
+
+    border-radius: 2.4074vh;
+    background: app.alpha(var(--color-text), 0.03);
+    box-shadow: app.$glass-box-shadow;
+
+    .title {
+        font-size: 2.5925vh;
+        font-weight: 700;
+        color: var(--color-text);
+    }
+
+    .price-container {
+        display: flex;
+        gap: 0.4166vw;
+
+        .old-price {
+            font-size: 2.7777vh;
+            font-weight: 600;
+            color: var(--color-text-muted);
+            text-decoration: line-through;
+        }
+
+        .price {
+            display: flex;
+            align-items: center;
+            gap: 0.7812vw;
+            
+            .number {
+                font-size: 4.4444vh;
+                font-weight: 500;
+                color: var(--color-text);
+            }
+
+            .unit {
+                display: flex;
+                flex-direction: column;
+
+                font-size: app.$vh-16px;
+                font-weight: 600;
+                color: var(--color-text);
+
+                line-height: 0.85;
+            }
+        }
+    }
+
+    .description {
+        font-size: app.$vh-18px;
+        font-weight: 700;
+        color: var(--color-text);
+    }
+
+    .action-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin: app.$vh-15px 0 app.$vh-10px 0;
+        padding: app.$vh-15px 0;
+
+        width: 100%;
+
+        font-size: app.$vh-15px;
+        font-weight: 700;
+
+        cursor: pointer;
+        
+        border-radius: 9.2592vh;
+    }
+
+    .advantages {
+        display: flex;
+        flex-direction: column;
+        gap: app.$vh-20px;
+
+        .advantage {
+            display: flex;
+            align-items: center;
+            gap: 0.6770vw;
+
+            font-size: app.$vh-16px;
+            font-weight: 600;
+            color: var(--color-text);
+
+            .icon {
+                width: app.$vh-18px;
+                height: app.$vh-18px;
+
+                fill: var(--color-text);
+            }
+        }
+    }
+
+    &.default {
+        border: 0.1157vh solid app.alpha(var(--color-text), 0.25);
+
+        .action-button {
+            color: var(--color-text-inverse);
+
+            background: app.alpha(var(--color-text), 0.5);
+        }
+    }
+
+    &.plus {
+        border: 0.1157vh solid app.$orange-500;
+
+        .title,
+        .price .number,
+        .price .unit,
+        .description,
+        .advantages .advantage   {
+            color: app.$orange-500;
+        }
+
+        .action-button {
+            color: var(--color-text-inverse);
+
+            background: app.$orange-500;
+        }
+
+        .advantages .advantage .icon {
+            fill: app.$orange-500;
+        }
+    }
+
+    &.ultra {
+        border: 0.1157vh solid app.$ai-adzen--color;
+
+        .title,
+        .price .number,
+        .price .unit,
+        .description,
+        .advantages .advantage   {
+            color: transparent;
+
+            background: app.$ai-adzen--gradient;
+
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;   
+        }
+
+        .action-button {
+            color: var(--color-text-inverse);
+            
+            background: app.$ai-adzen--gradient;
+        }
+
+        .advantages .advantage .icon {
+            fill: app.$ai-adzen--color;
+        }
+    }
+
+    &.current {
+        .action-button {
+            color: var(--color-text-muted);
+
+            background: app.alpha(var(--color-surface-soft), 0.5);
+            box-shadow: app.$glass-box-shadow;
+        }
+    }
+}

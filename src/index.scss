@@ -1,0 +1,112 @@
+@use "./App.scss" as app;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+* {
+  font-family: "Nunito", serif;
+  
+  transition: all .2s ease;
+}
+
+
+:root {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  --color-bg: #{app.$theme-dark-bg-static};
+  --color-bg-dashboard: #{app.$theme-dark-bg-dashboard-static};
+  --color-text: #{app.$theme-dark-text-static};
+  --color-text-inverse: #{app.$theme-light-text-static};
+  --color-text-muted: #{app.$theme-dark-muted-static};
+  --color-surface: #{app.$theme-dark-surface-static};
+  --color-surface-hover: #{app.$theme-dark-surface-hover-static};
+  --color-surface-soft: #{app.$theme-dark-surface-soft-static};
+  --color-surface-elevated: #{app.$theme-dark-surface-elevated-static};
+  --color-stroke: #{app.$theme-dark-stroke-static};
+  --color-border-strong: #{app.$theme-dark-border-strong-static};
+  --color-divider-muted: #{app.$theme-dark-divider-muted-static};
+  --color-muted-soft: #{app.$theme-dark-muted-soft-static};
+  --color-muted-strong: #{app.$theme-dark-muted-strong-static};
+  --color-modal: #{app.$theme-dark-modal-static};
+  --color-overlay: #{app.$theme-dark-overlay-static};
+  --color-fade-end: #{app.$theme-dark-fade-end-static};
+  --chart-grid-color: #{app.$theme-dark-border-strong-static};
+  --chart-axis-color: #{app.$theme-dark-muted-static};
+  --chart-cursor-color: #{app.$theme-dark-surface-static};
+  --white-gray--gradient: #{app.$theme-dark-white-gray--gradient};
+  --chat-add-icon: url(#dark);
+}
+
+:root[data-theme="light"] {
+  --color-bg: #{app.$theme-light-bg-static};
+  --color-bg-dashboard: #{app.$theme-light-bg-static};
+  --color-text: #{app.$theme-light-text-static};
+  --color-text-inverse: #{app.$theme-light-text-static};
+  --color-text-muted: #{app.$theme-light-muted-static};
+  --color-surface: #{app.$theme-light-surface-static};
+  --color-surface-hover: #{app.$theme-light-surface-hover-static};
+  --color-surface-soft: #{app.$theme-light-surface-soft-static};
+  --color-surface-elevated: #{app.$theme-light-surface-elevated-static};
+  --color-stroke: #{app.$theme-light-stroke-static};
+  --color-border-strong: #{app.$theme-light-stroke-static};
+  --color-divider-muted: #{app.$theme-light-divider-muted-static};
+  --color-muted-soft: #{app.$theme-light-muted-soft-static};
+  --color-muted-strong: #{app.$theme-light-muted-strong-static};
+  --color-modal: #{app.$theme-light-modal-static};
+  --color-overlay: #{app.$theme-light-overlay-static};
+  --color-fade-end: #{app.$theme-light-modal-static};
+  --chart-grid-color: #{app.$theme-light-chart-grid-static};
+  --chart-axis-color: #{app.$theme-light-muted-static};
+  --chart-cursor-color: #{app.$theme-light-surface-static};
+  --white-gray--gradient: #{app.$theme-light-white-gray--gradient};
+  --chat-add-icon: url(#light);
+}
+
+:focus-visible {
+  outline: none;
+}
+
+img, svg {
+  pointer-events: none;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  background: var(--color-bg);
+  color: var(--color-text);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-size: 16px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+// ::-webkit-scrollbar {
+//   width: 0.4166vw;
+// }
+
+// ::-webkit-scrollbar-thumb {
+//   background-color: $main-color;
+//   border-radius: $vh-10px;
+// }

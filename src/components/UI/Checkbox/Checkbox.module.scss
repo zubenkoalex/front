@@ -1,0 +1,72 @@
+@use '../../../App.scss' as app;
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.0416vw;
+    cursor: pointer;
+
+    border-radius: 0.3703vh;
+    transition: all 0.3s ease;
+
+    &.disabled {
+        opacity: 0.5;
+    }
+
+    .input {
+        display: none;
+    }
+
+    .box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: relative;
+
+        width: 2.9629vh;
+        height: 2.9629vh;
+
+        border-radius: 0.3703vh;
+        background: var(--color-surface);
+
+        &:hover {
+            background: var(--color-surface-hover);
+        }
+        
+        .checkmark {
+            width: app.$vh-20px;
+            height: app.$vh-20px;
+
+            clip-path: polygon(14% 44%, 36% 65%, 85% 14%, 95% 24%, 36% 84%, 4% 52%);
+            
+            background: app.$orange-500;
+        }
+  }
+}
+
+.label {
+    position: relative;
+    
+    font-size: app.$vh-16px;
+    font-weight: 600;
+    color: app.$gray-400;
+    
+    user-select: none;
+
+    &.checked {
+        color: var(--color-text);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

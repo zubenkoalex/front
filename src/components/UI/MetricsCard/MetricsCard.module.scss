@@ -1,0 +1,112 @@
+@use "../../../App.scss" as app;
+
+.metrics-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: app.$vh-15px 0.5208vw;
+
+    width: 100%;
+
+    border-radius: app.$vh-14px;
+    background-color: app.alpha(var(--color-text), 0.01);
+    box-shadow: app.$glass-box-shadow;
+
+    .icon-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 2.7777vh;
+        height: 2.7777vh;
+
+        border-radius: app.$vh-8px;
+        border: app.$vh-1px solid var(--color-text);
+        background: app.alpha(var(--color-text), 0.1);
+
+        .icon {
+            width: app.$vh-12px;
+
+            fill: var(--color-text);
+        }
+    }
+
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        .value {
+            font-size: app.$vh-14px;
+            font-weight: 800;
+            color: var(--color-text);
+        }
+
+        .key {
+            font-size: app.$vh-11px;
+            font-weight: 600;
+            color: var(--color-text-muted);
+        }
+    }
+
+    &.shows {
+        .icon-wrapper {
+            border: app.$vh-1px solid app.$orange-600;
+            background-color: app.alpha(app.$orange-600, 0.1);
+
+            .icon {
+                fill: app.$orange-600;
+            }
+        }
+
+        .card-content .value {
+            color: app.$orange-600;
+        }
+    }
+
+    &.clicks {
+        .icon-wrapper {
+            border: app.$vh-1px solid app.$blue-500;
+            background-color: app.alpha(app.$blue-500, 0.1);
+
+            .icon {
+                fill: app.$blue-500;
+            }
+        }
+
+        .card-content .value {
+            color: app.$blue-500;
+        }
+    }
+
+    &.ctr {
+        .icon-wrapper {
+            border: app.$vh-1px solid app.$green-500;
+            background-color: app.alpha(app.$green-500, 0.1);
+
+            .icon {
+                fill: app.$green-500;
+            }
+        }
+
+        .card-content .value {
+            color: app.$green-500;
+        }
+    }
+
+    &.conversions {
+        .icon-wrapper {
+            border: app.$vh-1px solid app.$yellow-500;
+            background-color: app.alpha(app.$yellow-500, 0.1);
+
+            .icon {
+                fill: app.$yellow-500;
+            }
+        }
+
+        .card-content .value {
+            color: app.$yellow-500;
+        }
+    }
+}

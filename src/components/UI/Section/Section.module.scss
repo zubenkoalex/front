@@ -1,0 +1,25 @@
+@use "../../../App.scss" as app;
+
+.section {
+    display: flex;
+    align-items: center;
+    
+    padding: 11.8518vh 0.8333vw;
+    
+    position: relative;
+    
+    transition: background-color 0.3s;
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 3.7037vh;
+
+        max-width: 66.6666vw;
+        
+        margin: 0 auto;
+
+        position: relative;
+        z-index: 10;
+    }
+}

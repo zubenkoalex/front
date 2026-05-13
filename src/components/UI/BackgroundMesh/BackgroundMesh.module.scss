@@ -1,0 +1,13 @@
+@use "../../../App.scss" as app;
+
+.background-mesh {
+    position: absolute;
+    inset: 0;
+
+    background-image: 
+        linear-gradient(to right,  app.alpha(var(--color-text), 0.03) app.$vh-1px, transparent app.$vh-1px),
+        linear-gradient(to bottom, app.alpha(var(--color-text), 0.03) app.$vh-1px, transparent app.$vh-1px);
+    background-size: 5.9259vh 5.9259vh;
+    
+    mask-image: radial-gradient(ellipse 80% 50% at 50% 50%, var(--color-text-inverse) 70%, transparent 100%);
+}

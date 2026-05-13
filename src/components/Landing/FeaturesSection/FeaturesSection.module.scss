@@ -1,0 +1,79 @@
+@use "../../../App.scss" as app;
+
+.blobs {
+    position: absolute;
+    inset: 0;
+
+    opacity: 0.2;
+
+    .blob {
+        height: 35.5555vh;
+        width: 35.5555vh;
+
+        filter: blur(11.1111vh);
+
+        animation-duration: 2s;
+
+        &.top-left {
+            top: 25%;
+            left: 25%;
+        }
+
+        &.bottom-right {
+            bottom: 25%;
+            right: 33.33%;
+        }
+    }
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: app.$vh-24px;
+
+    .border-gradient {
+        position: absolute;
+        inset: calc(-1 * app.$vh-2px);
+
+        opacity: 0;
+        filter: blur(app.$vh-4px);
+
+        border-radius: app.$vh-16px;
+
+        transition: opacity 0.3s ease;
+    }
+
+    .background-gradient {
+        position: absolute;
+        inset: 0;
+
+        opacity: 0;
+
+        border-radius: app.$vh-16px;
+
+        transition: opacity 0.5s ease;
+    }
+
+    .shine-effect {
+        position: absolute;
+        inset: 0;
+        transform: translateX(-100%);
+        
+        background: linear-gradient(90deg, transparent, var(--color-stroke), transparent);
+        transition: transform 1s ease;
+    }
+
+    .feature-container:hover {
+        .border-gradient {
+            opacity: 0.2;
+        }
+
+        .shine-effect {
+            transform: translateX(100%);
+        }
+
+        .background-gradient {
+            opacity: 0.2;
+        }
+    }
+}

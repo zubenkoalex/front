@@ -1,0 +1,338 @@
+@use "../../../../App.scss" as app;
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: app.$vh-20px;
+
+    padding: app.$vh-25px;
+
+    height: 100%;
+
+    border: none;
+    border-radius: app.$vh-20px;
+
+    background-color: app.alpha(var(--color-text), 0.01);
+    box-shadow: app.$glass-box-shadow;
+
+    .title {
+        display: flex;
+        align-items: center;
+        gap: 0.5208vw;
+
+        font-size: app.$vh-20px;
+        font-weight: 700;
+        color: app.$orange-500;
+
+        .icon {
+            height: app.$vh-18px;
+            width: app.$vh-18px;
+
+            fill: app.$orange-500;
+        }
+    }
+
+    .blocks {
+        display: flex;
+        gap: 1.5625vw;
+
+        width: 100%;
+
+        .block {
+            display: flex;
+            flex-direction: column;
+            gap: app.$vh-25px;
+
+            width: 100%;
+
+            .title {
+                display: flex;
+                align-items: center;
+                gap: 0.5208vw;
+
+                font-size: app.$vh-15px;
+                font-weight: 700;
+                color: app.$orange-500;
+
+                white-space: nowrap;
+
+                .line {
+                    height: app.$vh-1px;
+                    width: 100%;
+
+                    background: var(--color-divider-muted);
+                }
+            }
+
+            .info-container {
+                display: flex;
+                flex-direction: column;
+                gap: app.$vh-20px;
+
+                .info {
+                    display: flex;
+                    flex-direction: column;
+                    gap: app.$vh-5px;
+
+                    .label {
+                        font-size: app.$vh-12px;
+                        font-weight: 600;
+                        color: var(--color-text-muted);
+                    }
+
+                    .input {
+                        padding-bottom: app.$vh-5px;
+
+                        font-size: app.$vh-14px;
+                        font-weight: 700;
+                        color: var(--color-text);
+
+                        border-bottom: app.$vh-1px solid var(--color-divider-muted);
+
+                        .interests {
+                            display: flex;
+                            align-items: center;
+                            gap: 0.4166vw;
+
+                            .interest {
+                                display: flex;
+                                align-items: center;
+                                gap: 0.2604vw;
+
+                                font-size: app.$vh-14px;
+                                font-weight: 700;
+                                color: var(--color-text);
+                                
+                                .icon {
+                                    height: app.$vh-14px;
+                                    width: app.$vh-14px;
+    
+                                    fill: var(--color-text);
+                                }
+    
+                                @mixin category-card($class, $color) {
+                                    &.#{$class} {
+                                        color: $color;
+
+                                        .icon {
+                                            fill: $color;
+                                        }
+                                    }
+                                }
+    
+                                @include category-card("fashon", app.$fashon-color);
+                                @include category-card("sport", app.$sport-color);
+                                @include category-card("music", app.$music-color);
+                                @include category-card("trips", app.$trips-color);
+                                @include category-card("technology", app.$technology-color);
+                                @include category-card("beauty", app.$beauty-color);
+                                @include category-card("art", app.$art-color);
+                                @include category-card("education", app.$education-color);
+                                @include category-card("food", app.$food-color);
+                                @include category-card("cars", app.$cars-color);
+                                @include category-card("estate", app.$estate-color);
+                                @include category-card("sustainability", app.$sustainability-color);
+                            }
+                        }
+
+                        .platform {
+                            display: flex;
+                            align-items: center;
+                            gap: 0.2604vw;
+
+                            font-size: app.$vh-14px;
+                            font-weight: 700;
+                            color: var(--color-text);
+
+                            .icon-wrapper {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+
+                                height: app.$vh-20px;
+                                width: app.$vh-20px;
+
+                                border-radius: app.$vh-6px;
+
+                                .icon {
+                                    height: app.$vh-14px;
+                                }
+
+                                &.vk {
+                                    background: #0077FF;
+
+                                    .icon {
+                                        height: app.$vh-8px;
+                                    }
+                                }
+
+                                &.yandex-direct {
+                                    background: transparent;
+
+                                    .icon {
+                                        width: 100%;
+                                        height: 100%;
+    
+                                        border-radius: app.$vh-6px;
+                                    }
+                                }
+                            }
+                        }
+
+                        .description {
+                            font-size: app.$vh-12px;
+                            font-weight: 700;
+                            color: var(--color-text-muted);
+                        }
+                    }
+
+                    .metrics {
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: app.$vh-20px;
+
+                        .card {
+                            width: auto;
+                        }
+                    }
+                }
+
+                .creatives {
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    gap: 0.5208vw;
+
+                    max-height: 7.5925vh;
+                    overflow-y: auto;
+
+                    &::-webkit-scrollbar {
+                        width: 0.1562vw;
+
+                        border-radius: app.$vh-6px;
+                        background-color: app.alpha(var(--color-text), 0.05);
+                    }
+            
+                    &::-webkit-scrollbar-thumb {
+                        width: 0.1562vw;
+
+                        border-radius: app.$vh-6px;
+                        background-color: app.$orange-500;
+                    }
+
+                    .creative {
+                        display: flex;
+
+                        position: relative;
+
+                        width: 6.25vw;
+                        height: 7.4074vh;
+
+                        cursor: pointer;
+
+                        overflow: hidden;
+
+                        border-radius: app.$vh-16px;
+                        border: app.$vh-2px solid app.$orange-500;
+                        background-color: app.alpha(var(--color-text), 0.03);
+
+                        .background-overlay {
+                            position: absolute;
+                            inset: 0;
+
+                            min-width: 100%;
+                            min-height: 100%;
+
+                            opacity: 0.35;
+                            mix-blend-mode: overlay;
+
+                            border-radius: app.$vh-16px;
+                            background-color: app.$orange-500;
+                        }
+
+                        .image {
+                            position: relative;
+                            inset: 0;
+                            left: 50%;
+                            transform: translateX(-50%);
+
+                            aspect-ratio: 76 / 9;
+                            width: 100%;
+                            height: 100%;
+
+                            object-fit: cover;
+                            object-position: center;
+
+                            border-radius: app.$vh-16px;
+                        }
+
+                        .status {
+                            position: absolute;
+                            bottom: app.$vh-8px;
+
+                            height: app.$vh-16px;
+                            width: app.$vh-16px;
+
+                            fill: var(--color-text);
+
+                            filter: drop-shadow(0 0 app.$vh-20px app.alpha(var(--color-text-inverse), 0.8));
+
+                            &.selected {
+                                right: 0.4166vw;
+
+                                fill: app.$orange-500;
+                            }
+                        }
+
+                        .tooltip {
+                            display: flex;
+
+                            position: absolute;
+                            bottom: app.$vh-8px;
+                            left: 0.4166vw;
+                        }
+
+                        .tooltip-icon {
+                            height: app.$vh-16px;
+                            width: app.$vh-16px;
+
+                            fill: #16A2F0;
+                        }
+
+                        .tooltip-content {
+                            display: flex;
+                            align-items: center;
+                            gap: 0.5208vw;
+
+                            left: 0.7812vw;
+                            bottom: 5.2777vh;
+
+                            border: app.$vh-1px solid #16A2F0;
+                            background: var(--color-modal);
+                        }
+
+                        .content-icon {
+                            height: app.$vh-16px;
+                            width: app.$vh-16px;
+
+                            fill: #16A2F0;
+                        }
+
+                        .tooltip-text {
+                            font-size: app.$vh-13px;
+                            font-weight: 700;
+                            color: #16A2F0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .line {
+            width: app.$vh-1px;
+            height: 100%;
+
+            background: var(--color-border-strong);
+        }
+    }
+}

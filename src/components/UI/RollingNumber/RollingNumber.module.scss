@@ -1,0 +1,11 @@
+@use "../../../App.scss" as app;
+
+.rolling-number {
+    display: inline-flex;
+    align-items: baseline;
+    gap: app.$vh-2px;
+
+    font-size: app.$vh-16px;
+    font-weight: 700;
+    color: var(--color-text);
+}

@@ -1,0 +1,183 @@
+@use "../../../App.scss" as app;
+
+.ad-company {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: app.$vh-15px;
+
+    border: none;
+    border-radius: app.$vh-12px;
+    
+    background-color: app.alpha(var(--color-text), 0.02);
+    box-shadow: app.$glass-box-shadow;
+
+    .info {
+        display: flex;
+        gap: 0.4166vw;
+
+        height: 100%;
+
+        .icon-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 3.7037vh;
+            height: 3.7037vh;
+
+            border-radius: app.$vh-12px;
+            background: var(--color-text);
+
+            .icon {
+                height: app.$vh-17px;
+            }
+
+            &.vk {
+                background: #0077FF;
+            }
+
+            &.yandex-direct .icon {
+                width: 100%;
+                height: 100%;
+
+                border-radius: app.$vh-12px;
+            }
+        }
+
+        .name {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            height: 100%;
+
+            .title {
+                font-size: app.$vh-14px;
+                font-weight: 700;
+                color: var(--color-text);
+            }
+
+            .platform {
+                font-size: app.$vh-13px;
+                font-weight: 700;
+                color: app.alpha(var(--color-text), 0.7);
+            }
+        }
+
+        .status {
+            height: fit-content;
+
+            padding: app.$vh-4px 0.5208vw;
+
+            font-size: app.$vh-9px;
+            font-weight: 700;
+            color: var(--color-text);
+
+            border-radius: app.$vh-4px;
+            background: var(--color-text);
+
+            &.active {
+                color: app.$orange-500;
+                background: app.alpha(app.$orange-500, 0.1);
+            }
+
+            &.pause {
+                color: app.$yellow-500;
+                background: app.alpha(app.$yellow-500, 0.1);
+            }
+
+            &.end {
+                color: var(--color-text-muted);
+                background: app.alpha(var(--color-text-muted), 0.1);
+            }
+        }
+    }
+
+    .statistics {
+        display: flex;
+        align-items: center;
+        gap: 1.5625vw;
+
+        .statistic {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: app.$vh-6px;
+
+            .key {
+                font-size: app.$vh-10px;
+                font-weight: 600;
+                color: var(--color-text);
+
+                :global(:root[data-theme="dark"]) & {
+                    color: app.alpha(var(--color-text), 0.35);
+                }
+            }
+
+            .value {
+                font-size: app.$vh-15px;
+                font-weight: 700;
+                color: var(--color-text);
+            }
+
+            &.positive .value {
+                color: app.$green-500;
+            }
+
+            &.negative .value  {
+                color: app.$red-700;
+            }
+        }
+    }
+
+    .info .icon-skeleton,
+    .info .name .title-skeleton,
+    .info .name .platform-skeleton,
+    .info .status-skeleton,
+    .statistics .statistic .value-skeleton {
+        border-radius: app.$vh-12px;
+        background: app.alpha(var(--color-text), 0.05);
+
+        animation: pulse 2s cubic-bezier(.4, 0, .6, 1) infinite;
+    }
+
+    .info {
+        .icon-skeleton {
+            width: 3.7037vh;
+            height: 3.7037vh;
+        }
+
+        .name {
+            .title-skeleton {
+                height: app.$vh-18px;
+                width: 9.375vw;
+            }
+
+            .platform-skeleton {
+                height: app.$vh-16px;
+                width: 50%;
+            }
+        }
+
+        .status-skeleton {
+            height: app.$vh-18px;
+            width: 3.125vw;
+        }
+    }
+
+    .statistics .statistic .value-skeleton{
+        height: app.$vh-20px;
+        width: 3.125vw;
+    }
+
+    @keyframes pulse {
+        0%, 100% {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        50% {
+            background: rgba(255, 255, 255, 0.1);
+        }
+    }
+}

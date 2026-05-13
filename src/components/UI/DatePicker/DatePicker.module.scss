@@ -1,0 +1,309 @@
+@use "../../../App.scss" as app;
+
+.date-picker-container {
+    position: relative;
+
+    .date-picker {
+        .input {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            position: relative;
+
+            padding: app.$vh-7px 0.5208vw;
+
+            font-size: app.$vh-12px;
+            font-weight: 700;
+            color: var(--color-text);
+
+            white-space: nowrap;
+
+            cursor: pointer;
+
+            border-radius: app.$vh-6px;
+            border: app.$vh-1px solid var(--color-border-strong);
+            background: var(--color-surface-soft);
+
+            &.range {
+                min-width: 7.8125vw;
+            }
+            
+            &.with-time {
+                min-width: 10.4166vw;
+            }
+
+        }
+
+        .icon {    
+            position: absolute;
+            right: 0.5208vw;
+            top: 50%;
+            transform: translateY(-50%);
+    
+            width: app.$vh-14px;
+            height: app.$vh-14px;
+
+            fill: app.alpha(var(--color-text), 0.35);
+        }
+
+        &:hover {
+            .input {
+                background: var(--color-surface-elevated);
+            }
+
+            .icon {
+                fill: app.alpha(var(--color-text), 0.7);
+            }
+        }
+    }
+
+
+    .calendar {
+        position: absolute;
+        top: calc(100% + app.$vh-10px);
+        z-index: 2;
+    
+        padding: app.$vh-20px;
+        
+        border: none;
+        border-radius: app.$vh-12px;
+        background-color: app.alpha(var(--color-text-inverse), 0.2);
+
+        box-shadow: app.$glass-box-shadow;
+        backdrop-filter: blur(app.$vh-6px);
+    
+        .navigation {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.625vw;
+    
+            margin-bottom: app.$vh-24px;
+    
+            .nav-button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+    
+                height: -webkit-fill-available;
+                
+                padding: app.$vh-8px;
+    
+                cursor: pointer;
+    
+                border: none;
+                border-radius: app.$vh-6px;
+                background: none;
+    
+                transition: all 0.2s ease;
+    
+                .icon {
+                    height: app.$vh-8px;
+    
+                    stroke-width: 2;
+                    stroke: var(--color-text);
+    
+                    &.right {
+                        transform: rotate(90deg);
+                    }
+                    
+                    &.left {
+                        transform: rotate(-90deg);
+                    }
+                }
+            
+                &:hover {
+                    color: app.$orange-500;
+    
+                    background: var(--color-surface-elevated);
+                }
+            
+                &:active {
+                    transform: scale(0.95);
+                }
+            }
+    
+            .month-year-selector {
+                display: flex;
+                justify-content: center;
+                gap: 0.4166vw;
+    
+                flex: 1;
+
+                font-size: app.$vh-12px;
+            }
+            
+            .month-select {
+                min-width: 5.2083vw;
+                font-size: app.$vh-12px;
+            }
+    
+            .year-select {
+                min-width: 4.1666vw;
+                font-size: app.$vh-12px;
+            }
+
+            .header-select {
+                padding: app.$vh-2px 0.5208vw;
+                border-radius: app.$vh-6px;
+            }
+        }
+    
+        .weekdays-row {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: app.$vh-4px;
+    
+            margin-bottom: app.$vh-12px;
+        
+            .weekday-header {
+                padding: app.$vh-8px 0;
+    
+                font-size: app.$vh-12px;
+                font-weight: 600;
+                color: app.alpha(var(--color-text), 0.7);
+    
+                text-align: center;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+        }
+    
+        .days-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: app.$vh-4px;
+    
+            .day-button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+    
+                position: relative;
+    
+                font-size: app.$vh-14px;
+                font-weight: 500;
+                color: var(--color-text);
+    
+                aspect-ratio: 1;
+                cursor: pointer;
+    
+                border: none;
+                border-radius: app.$vh-6px;
+                background: transparent;
+    
+                transition: all 0.2s ease;
+            
+                &:not(:disabled):hover {
+                    color: app.$orange-500;
+    
+                    background: var(--color-surface-elevated);
+                    transform: translateY(calc(-1 * app.$vh-1px));
+                }
+            
+                &:disabled {
+                    color: app.alpha(var(--color-text), 0.3);
+    
+                    cursor: default;
+                }
+            
+                &.other-month {
+                    color: app.alpha(var(--color-text), 0.3);
+                    background: transparent;
+                
+                    &:hover {
+                        color: app.alpha(var(--color-text), 0.3);
+    
+                        background: transparent;
+                        transform: none;
+                    }
+                }
+            
+                &.selected {
+                    font-weight: 600;
+                    color: var(--color-text);
+    
+                    background: app.$orange-500;
+                    box-shadow: 0 app.$vh-2px app.$vh-8px app.alpha(app.$orange-500, 0.3);
+                    
+                    &:hover {
+                        color: var(--color-text);
+                        transform: translateY(calc(-1 * app.$vh-2px));
+    
+                        background: app.$orange-500;
+                        box-shadow: 0 app.$vh-4px app.$vh-12px app.alpha(app.$orange-500, 0.4);
+                    }
+                }
+                
+                &.in-range {
+                    color: app.$orange-500;
+    
+                    background: app.alpha(app.$orange-500, 0.2);
+                
+                    &:hover {
+                        background: app.alpha(app.$orange-500, 0.3);
+                    }
+                }
+    
+                &.range-end {
+                    font-weight: 600;
+                    color: var(--color-text);
+    
+                    background: app.$orange-500;
+                    box-shadow: 0 app.$vh-2px app.$vh-8px app.alpha(app.$orange-500, 0.3);
+                
+                    &:hover {
+                        color: var(--color-text);
+                        transform: translateY(calc(-1 * app.$vh-2px));
+    
+                        background: app.$orange-500;
+                        box-shadow: 0 app.$vh-4px app.$vh-12px app.alpha(app.$orange-500, 0.4);
+                    }
+                }
+    
+            }
+        }
+
+        .time-grid {
+            display: flex;
+            flex-direction: column;
+            gap: app.$vh-5px;
+
+            margin-top: app.$vh-12px;
+
+            padding-top: app.$vh-12px;
+
+            border-top: app.$vh-1px solid var(--color-border-strong);
+
+            .time {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                align-items: center;
+                gap: 0.5208vw;
+
+                font-size: app.$vh-14px;
+                font-weight: 700;
+                color: var(--color-text);
+
+                .label {
+                    color: app.alpha(var(--color-text), 0.7);
+                    white-space: nowrap;
+                }
+
+                .time-selector {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.2604vw;
+
+                    width: -webkit-fill-available;
+                    
+                    .time-select {
+                        min-width: 2.8645vw;
+                        width: -webkit-fill-available;
+                    }
+                }
+            }
+        }
+    }
+}

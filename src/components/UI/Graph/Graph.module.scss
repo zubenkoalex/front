@@ -1,0 +1,147 @@
+@use "../../../App.scss" as app;
+
+.graph {
+    display: flex;
+    flex-direction: column;
+    gap: app.$vh-20px;
+
+    width: 100%;
+
+    padding: app.$vh-20px 1.0416vw app.$vh-10px 1.0416vw;
+
+    border: none;
+    border-radius: app.$vh-18px;
+    
+    background-color: app.alpha(var(--color-text), 0.01);
+    box-shadow: app.$glass-box-shadow;
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+
+        .title {
+            font-size: app.$vh-14px;
+            font-weight: 700;
+            color: var(--color-text);
+        }
+
+        .fillters {
+            display: flex;
+            align-items: center;
+            gap: 0.3645vw;
+
+            .dropdown {
+                font-size: app.$vh-12px;
+            }
+
+            .dropdown-header {
+                padding: app.$vh-7px 0.5208vw;
+                border-radius: app.$vh-6px;
+            }
+
+            .fillter {
+                font-size: app.$vh-11px;
+                font-weight: 700;
+                color: app.alpha(var(--color-text), 0.35);
+
+                border-radius: app.$vh-6px;
+                border: app.$vh-1px solid var(--color-border-strong);
+                background: app.alpha(var(--color-text), 0.01);
+
+                &:hover {
+                    background: app.alpha(var(--color-text), 0.03);
+                }
+
+                &.active {
+                    color: var(--color-text);
+
+                    border-color: app.$orange-500;
+                    background: app.$orange-500;
+                }
+            }
+        }
+
+    }
+
+    .chart {
+        min-height: 23.1481vh;
+
+        .tooltip-wrapper {
+            display: flex;
+            flex-direction: column;
+
+            padding: 15px !important;
+
+            border-radius: app.$vh-12px;
+            border: app.$vh-1px solid var(--color-border-strong) !important;
+            background: app.alpha(var(--color-surface-elevated), 0.8);
+
+            .label {
+                display: flex;
+                justify-content: center;
+    
+                margin-bottom: app.$vh-10px;
+
+                font-size: app.$vh-16px;
+                font-weight: 700;
+                color: var(--color-text);
+            }
+
+            .item {
+                display: flex;
+                align-items: center;
+                gap: 0.2604vw;
+
+                font-size: app.$vh-14px;
+                font-weight: 600;
+                color: var(--color-text);
+
+            }
+        }
+
+
+        .legend-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5208vw;
+
+            .item {
+                display: flex;
+                align-items: center;
+                gap: 0.1562vw;
+
+                font-size: app.$vh-9px;
+                font-weight: 600;
+                color: var(--color-text);
+
+                .icon {
+                    width: 0.5208vw;
+
+                    fill: var(--color-text);
+
+                    &.bar {
+                        height: app.$vh-5px;
+                        width: app.$vh-5px;
+                    }
+                }
+            }
+        }
+    }
+
+    .spinner-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        min-height: 23.1481vh;
+
+        .spinner {
+            width: 3.2407vh;
+            height: 3.2407vh;
+
+            border: app.$vh-3px solid app.$orange-500;
+            border-bottom-color: transparent;
+        }
+    }
+}

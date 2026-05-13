@@ -1,0 +1,79 @@
+@use "../../../App.scss" as app;
+
+.device {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: app.$vh-15px;
+
+    border-radius: app.$vh-18px;
+    background: var(--color-surface-soft);
+    box-shadow: app.$glass-box-shadow;
+
+    .device-information {
+        display: flex;
+        align-items: center;
+        gap: 0.7812vw;
+
+        .icon {
+            width: 5.5555vh;
+            height: 5.5555vh;
+
+            fill: app.alpha(var(--color-text), 0.35)
+        }
+
+        .info-container {
+            display: flex;
+            flex-direction: column;
+            gap: app.$vh-5px;
+
+            .info {
+                font-size: app.$vh-15px;
+                font-weight: 600;
+                color: app.alpha(var(--color-text), 0.5);
+
+                .value {
+                    color: var(--color-text);
+                }
+
+                .point {
+                    margin: 0 0.5208vw;
+                }
+            }
+        }
+    }
+
+    .end-icon--container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .icon {
+            margin-right: app.$vh-15px;
+
+            height: app.$vh-24px;
+            width: app.$vh-24px;
+
+            fill: transparent;
+        }
+    }
+
+    &:hover {
+        .end-icon--container .icon {
+            fill: app.alpha(var(--color-text), 0.2);
+        }
+    }
+
+    &:has(.end-icon--container:hover) {
+        background: app.alpha(app.$red-600, 0.05);
+
+        .end-icon--container {
+            cursor: pointer;
+
+            .icon {
+                fill: app.$red-600;
+            }
+        }
+    }
+}

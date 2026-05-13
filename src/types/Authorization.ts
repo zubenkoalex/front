@@ -1,0 +1,1 @@
+export type AuthorizationPages = "login" | "signup" | "recovery" | "recoveryCode" | "recoveryPassword" | "confirm";

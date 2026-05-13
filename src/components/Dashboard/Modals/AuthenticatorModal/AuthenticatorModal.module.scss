@@ -1,0 +1,200 @@
+@use "../../../../App.scss" as app;
+
+.authenticator-modal {
+    max-width: 27.6041vw;
+
+    .disconnect {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: app.$vh-25px;
+
+        .icon-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: app.$vh-16px;
+
+            height: 7.4074vh;
+            width: 7.4074vh;
+
+            border-radius: 50%;
+            box-shadow: app.$glass-box-shadow;
+
+            .icon {
+                height: 3.3333vh;
+
+                fill: app.$red-600;
+            }
+        }
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: app.$vh-8px;
+
+            .title {
+                font-size: app.$vh-20px;
+                font-weight: 700;
+                color: var(--color-text);
+            }
+
+            .description {
+                display: flex;
+                flex-direction: column;
+
+                font-size: app.$vh-16px;
+                font-weight: 700;
+                color: var(--color-text-muted);
+                text-align: center;
+            }
+        }
+
+        .code-input {
+            width: 3.125vw;
+            height: 6.4814vh;
+
+            font-size: app.$vh-20px;
+            font-weight: 700;
+
+            border-radius: app.$vh-12px;
+            box-sizing: border-box;
+        }
+
+        .button {
+            padding: app.$vh-15px 0;
+
+            width: 100%;
+
+            font-size: app.$vh-15px;
+            font-weight: 700;
+            color: var(--color-text-muted);
+            white-space: nowrap;
+
+            border: none;
+            border-radius: app.$vh-12px;
+
+            background: app.alpha(var(--color-surface-soft), 0.5);
+            box-shadow: app.$glass-box-shadow;
+
+            &:hover {
+                color: var(--color-text);
+                background: var(--color-surface-soft);
+            }
+        }
+    }
+
+    .connect {
+        display: flex;
+        flex-direction: column;
+        gap: 2.7777vh;
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            gap: app.$vh-8px;
+    
+            .title {
+                font-size: app.$vh-20px;
+                font-weight: 700;
+                color: var(--color-text);
+            }
+    
+            .description {
+                font-size: app.$vh-16px;
+                font-weight: 700;
+                color: var(--color-text-muted);
+            }
+        }
+    
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: app.$vh-10px;
+    
+            .card {
+                display: flex;
+                gap: 1.8229vw;
+    
+                padding: app.$vh-25px 1.3020vw;
+    
+                border: app.$vh-1px solid var(--color-border-strong);
+                border-radius: app.$vh-14px;
+                background: var(--color-surface-soft);
+    
+                .icon-container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+    
+                    max-width: 5.2083vw;
+                    width: 100%;
+    
+                    .qr {
+                        min-height: 9.2592vh;
+                        // width: 8.3333vh;
+                        // height: 8.3333vh;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+    
+                .info {
+                    display: flex;
+                    flex-direction: column;
+                    gap: app.$vh-5px;
+    
+                    .title {
+                        font-size: app.$vh-16px;
+                        font-weight: 700;
+                        color: var(--color-text);
+                    }
+    
+                    .description {
+                        font-size: app.$vh-12px;
+                        font-weight: 700;
+                        color: var(--color-text-muted);
+                    }
+                }
+    
+                .card-content {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: app.$vh-25px;
+    
+                    .code-input {
+                        height: 42px;
+                        width: 38px;
+    
+                        font-size: app.$vh-16px;
+                        font-weight: 700;
+    
+                        box-sizing: border-box;
+                        border-radius: app.$vh-10px;
+                    }
+    
+                    .button {
+                        padding: app.$vh-15px 0;
+    
+                        width: 100%;
+    
+                        font-size: app.$vh-15px;
+                        font-weight: 700;
+                        color: var(--color-text-muted);
+                        white-space: nowrap;
+    
+                        border: none;
+                        border-radius: app.$vh-12px;
+    
+                        background: app.alpha(var(--color-surface-soft), 0.5);
+                        box-shadow: app.$glass-box-shadow;
+                    }
+                }
+            }
+        }
+    }
+
+}

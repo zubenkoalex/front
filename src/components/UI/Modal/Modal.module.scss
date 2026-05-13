@@ -1,0 +1,67 @@
+@use '../../../App.scss' as app;
+
+.modal {
+    display: none;
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+
+    .blur-layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+
+        width: 100%;
+        height: 100%;
+
+        pointer-events: none;
+
+        border-radius: inherit;
+        background: var(--color-overlay);
+        backdrop-filter: blur(app.$vh-1px);
+    }
+
+    &.active {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .close {
+        display: flex;
+        justify-content: flex-end;
+
+        position: absolute;
+        top: 2.7777vh;
+        right: 1.5625vw;
+
+        cursor: pointer;
+
+        .icon {
+            height: app.$vh-20px;
+            width: app.$vh-20px;
+
+            fill: var(--color-text);
+            fill-opacity: 0.5;
+        }
+
+        &:hover .icon {
+            fill-opacity: 1;
+        }
+    }
+    
+    .content {
+        position: relative;
+        
+        padding: 4.6296vh; 
+    
+        border-radius: app.$vh-18px;
+        background: var(--color-modal);
+    }
+}
+

@@ -1,0 +1,181 @@
+@use "../../../../../App.scss" as app;
+
+
+.services-page {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    .action-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.4166vw;
+
+        padding: app.$vh-15px 0;
+
+        min-width: 9.375vw;
+
+        font-size: app.$vh-15px;
+        font-weight: 700;
+        color: var(--color-text-muted);
+
+        cursor: pointer;
+        
+        border-radius: app.$vh-12px;
+        background: app.alpha(var(--color-surface-soft), 0.5);
+        box-shadow: app.$glass-box-shadow;
+        
+        .icon {
+            height: app.$vh-13px;
+            width: app.$vh-13px;
+
+            fill: var(--color-text-muted);
+
+            &.arrow {
+                transform: rotate(180deg);
+            }
+        }
+
+        &:hover {
+            background: var(--color-surface-elevated);
+        }
+
+        &.connected {
+            color: app.$green-600;
+
+            border: app.$vh-1px solid app.alpha(app.$green-600, 0.25);
+            background: app.alpha(app.$green-600, 0.1);
+            box-shadow: none;
+
+            .icon {
+                fill: app.$green-600;
+            }
+
+            &:hover {
+                color: app.$red-600;
+
+                border: app.$vh-1px solid app.alpha(app.$red-600, 0.25);
+                background: app.alpha(app.$red-600, 0.1);
+                box-shadow: none;
+
+
+                .icon {
+                    fill: app.$red-600;
+                }
+            }
+        }
+
+        &.back {
+            min-width: 6.7708vw;
+        }
+    }
+
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+
+        padding: 3.2407vh;
+
+        border-top-left-radius: 3.3333vh;
+        border-top-right-radius: 3.3333vh;
+        border-bottom: app.$vh-2px solid var(--color-border-strong);
+        background: app.alpha(var(--color-text-inverse), 0.1);
+
+        .services-info {
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+
+            font-size: app.$vh-16px;
+            font-weight: 700;
+            color: var(--color-text-muted);
+
+            .count {
+                font-size: app.$vh-18px;
+
+                .active {
+                    color: app.$orange-500;
+                }
+            }
+        }
+    }
+
+    .services {
+        display: flex;
+        flex-direction: column;
+
+        padding: app.$vh-15px;
+
+        .service {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: app.$vh-20px 1.5625vw;
+
+            border-bottom: app.$vh-1px solid var(--color-border-strong);
+
+            &:nth-last-child(1) {
+                border-bottom: none;
+            }
+
+            .service-info {
+                display: flex;
+                align-items: center;
+                gap: 0.7812vw;
+
+                .icon-wrapper {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+    
+                    width: 3.7037vh;
+                    height: 3.7037vh;
+    
+                    border-radius: app.$vh-12px;
+                    background: var(--color-text);
+    
+                    .icon {
+                        height: app.$vh-17px;
+                    }
+                }
+
+                .name {
+                    font-size: app.$vh-18px;
+                    font-weight: 700;
+                    color: var(--color-text);
+                }
+            }
+
+            &.vk {
+                .service-info {
+                    .icon-wrapper {
+                        background: #0077FF;
+                    }
+
+                    .name {
+                        color: app.$vk-color;
+                    }
+                }
+            }
+
+            &.yandex-direct {
+                .service-info {
+                    .icon-wrapper .icon {
+                        width: 100%;
+                        height: 100%;
+    
+                        border-radius: app.$vh-12px;
+                    }
+
+                    .name {
+                        color: app.$yandex-direct-color;
+                    }
+                }
+            }
+        }
+    }
+}

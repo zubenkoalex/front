@@ -1,0 +1,288 @@
+@use "../../../../../App.scss" as app;
+
+.account-page {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    .profile-container {
+        display: flex;
+        flex-direction: column;
+
+        padding: 3.2407vh 1.8229vw 4.6296vh 1.8229vw;
+
+        border-top-left-radius: 3.3333vh;
+        border-top-right-radius: 3.3333vh;
+        background: app.alpha(var(--color-text-inverse), 0.1);
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 0.7812vw;
+
+            position: relative;
+
+            .avatar {
+                position: relative;
+
+                min-height: 9.2592vh;
+                min-width: 9.2592vh;
+
+                border-radius: 50%;
+                border: 0.1388vh solid var(--color-border-strong);
+                background: app.alpha(var(--color-text), 0.02);
+
+                .icon-container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    
+                    width: 2.7777vh;
+                    height: 2.7777vh;
+                    
+                    opacity: 0;
+
+                    .icon {
+                        height: app.$vh-11px;
+                        width: 0.7291vw;
+
+                        fill: var(--color-text);
+                    }
+
+                    border-radius: 50%;
+                    border: 0.0694vh solid var(--color-border-strong);
+                    background: var(--color-modal);
+                }
+
+                &.edit-avatar {
+                    cursor: pointer;
+
+                    background: var(--color-modal);
+                }
+
+                &:hover {
+                    .icon-container {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .name {
+                font-size: app.$vh-20px;
+                font-weight: 700;
+                color: var(--color-text);
+            }
+
+            .edit-icon-container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                height: app.$vh-18px;
+                width: app.$vh-18px;
+
+                cursor: pointer;
+
+                .icon {
+                    width: 90%;
+                    height: 90%;
+    
+                    fill: var(--color-text-muted);
+    
+                    :global(#gradient-1),
+                    :global(#gradient-2),
+                    :global(#default-1),
+                    :global(#default-2) {
+                        transition: opacity 0.3s ease;
+                    }
+    
+                    :global(#gradient-1),
+                    :global(#gradient-2) {
+                        opacity: 0;
+                    }
+                }
+
+                &:hover .icon{
+                    fill: var(--color-text);
+                }
+            }
+
+            .edit {
+                display: flex;
+                flex-direction: column;
+                gap: app.$vh-6px;
+
+                width: 100%;
+
+                .label {
+                    font-size: app.$vh-13px;
+                    font-weight: 700;
+                    color: app.alpha(var(--color-text), 0.8);
+                }
+            }
+
+            .view {
+                display: flex;
+                align-items: center;
+                gap: 0.7812vw;
+
+                position: absolute;
+                left: 5.9895vw;
+            }
+        }
+
+        .action-buttons {
+            display: flex;
+            align-items: center;
+            gap: 0.5208vw;
+
+            padding-top: 4.6296vh;
+
+            .button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                padding: app.$vh-15px;
+
+                width: 100px;
+
+                font-size: app.$vh-15px;
+                font-weight: 700;
+                color: var(--color-text);
+
+                cursor: pointer;
+                box-sizing: content-box;
+
+                border: none;
+                border-radius: app.$vh-12px;
+                background: app.alpha(var(--color-surface-elevated), 0.5);
+                box-shadow: app.$glass-box-shadow;
+
+                &.primary {
+                    background: app.$orange-500;
+                    box-shadow: none;
+                }
+
+                &:hover {
+                    background: var(--color-surface-elevated);
+
+                    &.primary {
+                        background: app.$orange-600;
+                    }
+                }
+
+                .spinner {
+                    width: app.$vh-21px;
+                    height: app.$vh-21px;
+            
+                    border: app.$vh-3px solid app.alpha(var(--color-text), 0.5);
+                    border-bottom-color: transparent;
+                }
+            }
+        }
+    }
+
+    .settings {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5555vh;
+
+        padding: app.$vh-10px 0.7812vw;
+
+        width: 100%;
+
+        box-sizing: border-box;
+        
+        .setting {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: app.$vh-20px 1.5625vw;
+
+            border-bottom: app.$vh-1px solid var(--color-border-strong);
+
+            &:nth-last-child(1) {
+                border-bottom: none;
+            }
+
+            .info {
+                display: flex;
+                align-items: center;
+                gap: 0.5208vw;
+
+                .key {
+                    font-size: app.$vh-16px;
+                    font-weight: 700;
+                    color: var(--color-text-muted);
+                }
+
+                .value {
+                    display: flex;
+                    align-items: center;
+                    gap: 0.2604vw;
+
+                    font-size: app.$vh-16px;
+                    font-weight: 700;
+                    color: var(--color-text);
+                    white-space: nowrap;
+
+                    .icon {
+                        width: app.$vh-14px;
+                        height: app.$vh-14px;
+
+                        fill: var(--color-text);
+                    }
+                }
+            }
+
+            .action-button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.4166vw;
+
+                padding: app.$vh-15px 0;
+
+                min-width: 9.375vw;
+
+                font-size: app.$vh-15px;
+                font-weight: 700;
+                color: var(--color-text-muted);
+
+                cursor: pointer;
+                
+                border-radius: app.$vh-12px;
+                background: app.alpha(var(--color-surface-soft), 0.5);
+                box-shadow: app.$glass-box-shadow;
+                
+                .icon {
+                    height: app.$vh-15px;
+
+                    fill: var(--color-text-muted);
+                }
+
+                &:hover {
+                    background: var(--color-surface-elevated);
+                }
+            }
+
+            &.delete {
+                .info .key,
+                .action-button {
+                    color: app.$red-600;
+                }
+
+                .action-button .icon {
+                    fill: app.$red-600;
+                }
+            }
+        }
+    }
+}
