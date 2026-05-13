@@ -11,7 +11,7 @@ RUN npm run build
 # Этап 2: Раздача статики через легковесный Nginx
 FROM nginx:alpine
 # Копируем собранные файлы из папки dist (стандарт Vite) в папку Nginx
-COPY --from=build /app/dist /usr/share/nginx/html
+COPY --from=build /app/build /usr/share/nginx/html
 RUN echo 'server { \
     listen 80; \
     location / { \
