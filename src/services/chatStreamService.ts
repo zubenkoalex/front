@@ -52,6 +52,13 @@ export const startChatStream = async ({
                         id: messageId,
                         chunk: payload.data
                     }));
+                } else if (payload.message || payload.error) {
+                    // Если бэкенд прислал сообщение об ошибке (например, нет ключа API)
+                    dispatch(allActions.dashboard.chatErrorMessage({ 
+                        id: messageId, 
+                        error: payload.message || payload.error 
+                    }));
+                    return "done";
                 }
             } catch {
                 console.warn("Не удалось распарсить чанк JSON:", dataStr);
