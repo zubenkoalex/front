@@ -3,6 +3,8 @@ import { DashboardState } from "./state";
 import { CompanyForecast, companyForecastTest, Message, CompanyCreative, NewCompanyMainInfo, NewCompanyTargetPeople, SettingPages } from "../../../types/Dashboard";
 import { playSound2D } from "../../../utils/sounds";
 import { FileMetadata } from "../../../types/UI";
+// ДОБАВЛЕН ИМПОРТ API
+import { dashboardApi } from '../../../services/dashboardService';
 
 const THEME_STORAGE_KEY = "adzen-theme-mode";
 
@@ -288,6 +290,48 @@ export const DashboardSlice = createSlice({
         resetState() {
             return initialState;
         }
+    },
+    // === ДОБАВЛЯЕМ EXTRA REDUCERS ДЛЯ СИНХРОНИЗАЦИИ С БЭКЕНДОМ ===
+    extraReducers: (builder) => {
+        // 1. Слушаем загрузку списка чатов
+        builder.addMatcher(
+            dashboardApi.endpoints.getChats.matchFulfilled,
+            (state, { payload }) => {
+                payload.forEach((chat: any) => {
+                    if (!state.chat.chats[chat.id]) {
+                        state.chat.chats[chat.id] = {
+                            id: chat.id,
+                            name: chat.name,
+                            messages: chat.messages || [], 
+                            createdAt: chat.createdAt,
+                            updatedAt: chat.createdAt
+                        };
+                    } else {
+                        // Обновляем существующие
+                        state.chat.chats[chat.id].name = chat.name;
+                        state.chat.chats[chat.id].messages = chat.messages || [];
+                    }
+                });
+            }
+        );
+
+        // 2. Слушаем загрузку истории конкретного чата
+        builder.addMatcher(
+            dashboardApi.endpoints.getChatHistory.matchFulfilled,
+            (state, { payload, meta }) => {
+                const chatId = meta.arg.originalArgs; // Достаем ID чата из запроса
+                
+                // Сохраняем массив ID сообщений в чат
+                if (state.chat.chats[chatId]) {
+                    state.chat.chats[chatId].messages = payload.map((m: any) => m.id);
+                }
+
+                // Раскладываем сами сообщения в общий словарь
+                payload.forEach((msg: any) => {
+                    state.chat.messages[msg.id] = msg;
+                });
+            }
+        );
     }
 })
 
