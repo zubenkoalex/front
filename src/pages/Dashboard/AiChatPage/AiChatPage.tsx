@@ -41,7 +41,8 @@ export const AiChatPage: FC<ComponentProps> = ({
     });
 
     const activeChat = chatId ? chats[chatId] : null;
-    const chatMessages = activeChat ? activeChat.messages.map(id => messages[id]) : [];
+    // Добавляем фильтр, чтобы React не пытался рисовать пустоту, пока данные летят с сервера
+    const chatMessages = activeChat ? activeChat.messages.map(id => messages[id]).filter(msg => msg !== undefined) : [];
 
     const lastMessage = chatMessages[chatMessages.length - 1];
     const isGenerating = lastMessage?.sender === 'ai' && (lastMessage?.status === 'thinking' || lastMessage?.status === 'streaming');
