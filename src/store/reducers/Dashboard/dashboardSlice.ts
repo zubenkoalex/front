@@ -4,7 +4,7 @@ import { CompanyForecast, companyForecastTest, Message, CompanyCreative, NewComp
 import { playSound2D } from "../../../utils/sounds";
 import { FileMetadata } from "../../../types/UI";
 // ДОБАВЛЕН ИМПОРТ API
-import { dashboardApi } from '../../../services/dashboardService';
+import { dashboardApiSlice } from '../../../services/dashboardService';
 
 const THEME_STORAGE_KEY = "adzen-theme-mode";
 
@@ -295,8 +295,9 @@ export const DashboardSlice = createSlice({
     extraReducers: (builder) => {
         // 1. Слушаем загрузку списка чатов
         builder.addMatcher(
-            dashboardApi.endpoints.getChats.matchFulfilled,
-            (state, { payload }) => {
+            dashboardApiSlice.endpoints.getChats.matchFulfilled,
+            (state, action: any) => {
+                const { payload } = action;
                 payload.forEach((chat: any) => {
                     if (!state.chat.chats[chat.id]) {
                         state.chat.chats[chat.id] = {
@@ -317,8 +318,9 @@ export const DashboardSlice = createSlice({
 
         // 2. Слушаем загрузку истории конкретного чата
         builder.addMatcher(
-            dashboardApi.endpoints.getChatHistory.matchFulfilled,
-            (state, { payload, meta }) => {
+            dashboardApiSlice.endpoints.getChatHistory.matchFulfilled,
+            (state, action: any) => {
+                const { payload, meta } = action;
                 const chatId = meta.arg.originalArgs; // Достаем ID чата из запроса
                 
                 // Сохраняем массив ID сообщений в чат
