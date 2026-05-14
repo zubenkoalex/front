@@ -159,7 +159,7 @@ export const CompanyPage: FC = () => {
                                         >
                                             <div className={styles["background-overlay"]} />
                                             {/* 3. Отрисовываем правильную картинку */}
-                                            <img src={imageUrl} className={styles["image"]} />
+                                            <img src={imageUrl} className={styles["image"]} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                                         </div>
                                     );
                                 })
