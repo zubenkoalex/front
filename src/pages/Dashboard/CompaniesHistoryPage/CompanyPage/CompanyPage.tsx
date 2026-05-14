@@ -11,7 +11,6 @@ import { AdCompanyExpensesNames, interests, interestsIcons } from "../../../../t
 import { AdCompanyIcons, AdCompanyNames, DropdownItem, FilterState, FilterType, graphFilterItems, StatisticsCardProps, statuses } from "../../../../types/UI";
 import { pluralize } from "../../../../utils";
 
-
 export const CompanyPage: FC = () => {
     const { companyId: id } = useParams<{ companyId: string }>();
 
@@ -130,40 +129,21 @@ export const CompanyPage: FC = () => {
         <div className={`${styles["company-page"]} ${fetchedCompany ? styles[fetchedCompany.status] : ""}`}>
             <div className={styles["title"]}>
                 {(isFetchingCompany || isErrorCompany) ?
-                                Array.from({length: 6}).map((_, index) => (
-                                    <div 
-                                        key={index} 
-                                        className={`${styles["creative"]}`}
-                                    >
-                                        <div className={styles["background-overlay"]} />
-                                        <div className={`${styles["image"]} ${styles["skeleton"]}`} />
-                                    </div>
-                                ))
-                                :
-                                fetchedCompany?.creatives.map(creative => {
-                                    // 1. Формируем правильную ссылку на картинку
-                                    let imageUrl = creative.serverUrl || creative.previewUrl;
-                                    if (imageUrl && imageUrl.startsWith('/')) {
-                                        imageUrl = `https://adzen-ai.ru/api${imageUrl}`;
-                                    }
-
-                                    return (
-                                        <div 
-                                            key={creative.id} 
-                                            className={`${styles["creative"]}`}
-                                            onClick={() => {
-                                                setActiveModal("image");
-                                                // 2. В модальное окно тоже передаем правильную ссылку
-                                                setShowedImage(imageUrl);
-                                            }}
-                                        >
-                                            <div className={styles["background-overlay"]} />
-                                            {/* 3. Отрисовываем правильную картинку */}
-                                            <img src={imageUrl} className={styles["image"]} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                                        </div>
-                                    );
-                                })
-                            }
+                    <>
+                        <span className={`${styles["value"]} ${styles["skeleton"]}`}>value</span>
+                        <div className={`${styles["status"]} ${styles["skeleton"]}`}>
+                            <span>status</span>
+                        </div>
+                    </>
+                    :
+                    <>
+                        <span>{fetchedCompany?.name}</span>                    
+                        <div className={styles["status"]}>
+                            <span>{status}</span>
+                            {StatusIcon && <StatusIcon className={styles["icon"]} />}
+                        </div>
+                    </>
+                }
             </div>
             <div className={styles["main-info"]}>
                 <div className={styles["block"]}>
@@ -303,20 +283,27 @@ export const CompanyPage: FC = () => {
                                     </div>
                                 ))
                                 :
-                                fetchedCompany?.creatives.map(creative => (
+                                fetchedCompany?.creatives.map(creative => {
+                                    // Вот наше правильное исправление ссылок!
+                                    let imageUrl = creative.serverUrl || creative.previewUrl;
+                                    if (imageUrl && imageUrl.startsWith('/')) {
+                                        imageUrl = `https://adzen-ai.ru/api${imageUrl}`;
+                                    }
+
+                                    return (
                                         <div 
                                             key={creative.id} 
                                             className={`${styles["creative"]}`}
                                             onClick={() => {
                                                 setActiveModal("image");
-                                                setShowedImage(creative.serverUrl || creative.previewUrl);
+                                                setShowedImage(imageUrl);
                                             }}
                                         >
                                             <div className={styles["background-overlay"]} />
-                                            <img src={creative.serverUrl || creative.previewUrl} className={styles["image"]} />
+                                            <img src={imageUrl} className={styles["image"]} />
                                         </div>
                                     )
-                                )
+                                })
                             }
                         </div>
                     </div>
