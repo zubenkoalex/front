@@ -129,6 +129,7 @@ export interface CompanyForecast {
     description: string;
     platforms: {
         key: string;
+        ai_description?: string;
         strategies: {
             key: "cpm" | "cpc" | "cpa";
             metrics: {
