@@ -44,7 +44,10 @@ export const LogIn: FC<ComponentProps> = ({
         await login({ loginOrEmail: loginOrEmailInput.value, password: passwordInput.value, remember: rememberUser }).unwrap();
         navigate('/dashboard');
     }
-    const handleGoogleLogin = async () => navigate('/google');
+    const handleGoogleLogin = () => {
+    // Делаем прямой переход на эндпоинт бэкенда
+    window.location.href = 'https://adzen-ai.ru/api/auth/google/login';
+    };
 
     return (
         <div className={`${styles["form"]} ${className ? className : ""}`}>
