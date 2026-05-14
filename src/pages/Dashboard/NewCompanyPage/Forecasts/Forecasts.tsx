@@ -102,7 +102,9 @@ export const Forecasts: FC = () => {
                     <div className={styles["forecast-content"]}>
                         <div className={styles["company-info"]}>
                             <span className={styles["title"]}>{companyForecast.name}</span>
-                            <span className={styles["description"]}>{companyForecast.description}</span>
+                            <span className={styles["description"]}>
+                            {platformInfo?.ai_description || companyForecast.description}
+                            </span>
                         </div>
                         <span className={styles["forecast-title"]}>Прогноз результатов по стратегиям</span>
                         <div className={styles["strategies"]}>
